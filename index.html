@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>s
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张三 — 软件测试工程师</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#1e3a5f',      //deep blue
+                        'accent-light': '#2c5282',      //light blue
+                        'accent-subtle': '#ebf0f7',      //lighter blue
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+        * { font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif; }
+        html { scroll-behavior: smooth; }
+        ::selection { background: #1e3a5f; color: #fff; }
+        .section-label {
+            letter-spacing: 0.2em;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center">
+            <a href="#" class="text-lg font-semibold tracking-tight text-gray-900">Zhang</a>
+            <div class="flex gap-10 text-sm font-medium text-gray-500">
+                <a href="#about" class="hover:text-gray-900 transition-colors">关于</a>
+                <a href="#skills" class="hover:text-gray-900 transition-colors">技能</a>
+                <a href="#projects" class="hover:text-gray-900 transition-colors">项目</a>
+                <a href="#contact" class="hover:text-gray-900 transition-colors">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center px-8 pt-24 pb-16">
+        <div class="max-w-6xl mx-auto w-full">
+            <div class="max-w-3xl">
+                <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-8 tracking-[0.25em]">Software Test Engineer</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8">
+                    你好，我是<br>
+                    <span class="font-semibold text-accent">张三</span>
+                </h1>
+                <p class="text-xl text-gray-500 font-light leading-relaxed max-w-xl mb-12">
+                    软件测试工程师，专注于自动化测试与质量保障。
+                    用 Python 与 Selenium 构建可靠的测试体系，
+                    在每一次迭代中守护产品品质。
+                </p>
+                <div class="flex gap-5">
+                    <a href="#contact" class="inline-flex items-center px-8 py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors">
+                        联系我
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/></svg>
+                    </a>
+                    <a href="#skills" class="inline-flex items-center px-8 py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
+                        查看技能栈
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-32 px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-6 tracking-[0.25em]">About</p>
+                    <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-10">关于我</h2>
+                    <div class="space-y-6 text-gray-500 leading-relaxed text-lg font-light">
+                        <p>
+                            拥有 <strong class="text-gray-900 font-medium">5 年经验</strong>的软件测试工程师，目前在互联网行业负责核心业务线的质量保障工作。热衷于通过自动化手段持续提升测试效率，降低回归成本。
+                        </p>
+                        <p>
+                            精通 <strong class="text-gray-900 font-medium">Python + Selenium</strong> 自动化测试框架的搭建与维护，擅长接口测试、性能测试以及 CI/CD 流水线集成。同时具备 MySQL 数据校验和 Linux 服务器运维能力，能从数据层面保障业务准确性。
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <div class="w-72 h-72 rounded-2xl bg-gray-200 flex items-center justify-center text-8xl font-light text-gray-300 select-none">
+                        Z
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="py-24 px-8 bg-white">
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl sm:text-3xl font-light text-gray-400 leading-relaxed italic">
+                "质量不是测出来的，而是构建出来的"
+            </blockquote>
+            <p class="mt-6 text-sm text-gray-400 font-medium">— 我的测试理念</p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-32 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20">
+                <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-6 tracking-[0.25em]">Skills</p>
+                <h2 class="text-4xl sm:text-5xl font-light tracking-tight">技能栈</h2>
+            </div>
+
+            <!-- Core Skills List -->
+            <div class="grid md:grid-cols-2 gap-x-20 gap-y-10">
+                <!-- Python -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" viewBox="0 0 24 24" fill="currentColor"><path d="M14.31.18l.9.3.6.34.5.45.36.56.16.64v6.72l-.14.5-.24.43-.34.36-.47.3-.62.2H9.33l-.58-.15-.45-.34-.38-.46-.2-.55V2.65l.17-.6.33-.5.5-.41.58-.26.67-.12h4.27zm-2.4 8.34c.18 0 .34-.05.47-.15.13-.1.23-.23.3-.4a1.14 1.14 0 00-.21-1.26 1.04 1.04 0 00-.76-.3c-.18 0-.34.05-.47.15a.95.95 0 00-.29.4c-.08.17-.1.35-.07.54a1.06 1.06 0 00.39.69c.18.15.4.24.64.24.02 0 .02 0 0 0zm-6.05 2.94l.43-.19.5-.08h.85l.44.1.38.26.28.38.13.5v6.72l-.13.5-.27.36-.37.26-.44.1h-.77l-.5-.08-.43-.19-.3-.27-.38-.46-.46-.7-.52-.9-.5-.96-.42-.89-.32-.74-.2-.63-.09-.55.06-.56.17-.56.26-.52.34-.48.41-.4.41-.28.4-.17h.06z"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Python</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">精通</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selenium -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Selenium</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">精通</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pytest -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Pytest</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">精通</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MySQL -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125v-3.75"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">MySQL</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">熟练</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appium -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Appium</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">熟练</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postman -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6.878V6a2.25 2.25 0 0 1 2.25-2.25h7.5A2.25 2.25 0 0 1 18 6v.878m-12 0c.235.083.487.128.75.128h10.5c.263 0 .515-.045.75-.128m-12 0A2.25 2.25 0 0 0 4.5 9v.878m13.5-3A2.25 2.25 0 0 1 19.5 9v.878m0 0a2.246 2.246 0 0 0-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0 1 21 12v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6c0-.98.626-1.813 1.5-2.122"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Postman</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">精通</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jenkins -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Jenkins CI/CD</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">熟练</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:82%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JMeter -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h12a2.25 2.25 0 0 0 2.25-2.25V3M3.75 3h16.5M3.75 3l-.75.75m16.5-.75.75.75m-9 13.5v4.5m-3.75 0h7.5"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">JMeter</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">掌握</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Docker -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Docker</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">熟练</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linux -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Linux</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">熟练</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:78%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Git -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Git</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">精通</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charles -->
+                <div class="flex items-center gap-5 group">
+                    <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-base font-medium text-gray-900">Charles / Fiddler</span>
+                            <span class="text-xs text-gray-400 font-medium tabular-nums tracking-wide">熟练</span>
+                        </div>
+                        <div class="h-[2px] bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-accent/50 rounded-full" style="width:85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Tags -->
+            <div class="mt-24 pt-16 border-t border-gray-100">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-8">工具生态</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Redis</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">MongoDB</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Allure</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Jira</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Confluence</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Requests</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Django</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">FastAPI</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Shell</span>
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 hover:text-accent hover:border-accent/30 transition-colors">Nginx</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-32 px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20">
+                <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-6 tracking-[0.25em]">Projects</p>
+                <h2 class="text-4xl sm:text-5xl font-light tracking-tight">项目经历</h2>
+            </div>
+
+            <div class="space-y-20">
+
+                <!-- Project 1 -->
+                <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2024.03 — 2024.09</p>
+                        <h3 class="text-2xl font-light text-gray-900 mb-2">电商平台自动化测试体系</h3>
+                        <p class="text-sm text-gray-400">某头部电商 · 核心业务线</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 leading-relaxed mb-5">
+                            从零搭建基于 <strong class="text-gray-900 font-medium">Python + Selenium + Pytest</strong> 的 Web 自动化测试框架，
+                            覆盖用户端核心交易链路（登录、搜索、下单、支付）共 200+ 条用例。
+                            集成 Allure 测试报告与 Jenkins 定时执行，将回归测试周期从 3 天缩短至 4 小时。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Selenium</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Pytest</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Jenkins</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Allure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2023.06 — 2024.02</p>
+                        <h3 class="text-2xl font-light text-gray-900 mb-2">接口自动化测试平台</h3>
+                        <p class="text-sm text-gray-400">企业内部工具 · 质量中台</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 leading-relaxed mb-5">
+                            主导设计并实现了基于 <strong class="text-gray-900 font-medium">Python + FastAPI + MySQL</strong> 的接口自动化测试平台。
+                            支持用例在线编辑、定时执行、结果持久化与历史对比，日均执行接口用例 500+ 条，
+                            覆盖 12 个微服务模块，帮助团队在每次发版前自动完成全量接口回归。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">FastAPI</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">MySQL</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Requests</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2022.10 — 2023.05</p>
+                        <h3 class="text-2xl font-light text-gray-900 mb-2">移动端自动化测试方案</h3>
+                        <p class="text-sm text-gray-400">某金融 App · 质量保障</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 leading-relaxed mb-5">
+                            引入 <strong class="text-gray-900 font-medium">Appium</strong> 搭建移动端 UI 自动化方案，覆盖 Android & iOS 双平台
+                            核心业务流程（注册、实名认证、理财购买、赎回），编写可复用 Page Object 封装层。
+                            结合 JMeter 完成关键接口压力测试，保障系统在峰值 QPS 下的稳定性。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Appium</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">JMeter</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20">
+                <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-6 tracking-[0.25em]">Contact</p>
+                <h2 class="text-4xl sm:text-5xl font-light tracking-tight">联系方式</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-y-14 gap-x-20 mb-24">
+                <div class="group">
+                    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">邮箱</p>
+                    <a href="mailto:zhangsan@example.com" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">zhangsan@example.com</a>
+                </div>
+                <div class="group">
+                    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">电话</p>
+                    <a href="tel:+8613800000000" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">138-0000-0000</a>
+                </div>
+                <div class="group">
+                    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">GitHub</p>
+                    <a href="https://github.com" target="_blank" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">github.com/zhangsan</a>
+                </div>
+                <div class="group">
+                    <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">微信</p>
+                    <span class="text-2xl font-light text-gray-900">zhangsan_work</span>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="max-w-xl">
+                <h3 class="text-lg font-medium text-gray-900 mb-8">发送消息</h3>
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('消息已发送！（演示功能）');">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <input type="text" placeholder="姓名" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-colors">
+                        <input type="email" placeholder="邮箱" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-colors">
+                    </div>
+                    <input type="text" placeholder="主题" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-colors">
+                    <textarea rows="3" placeholder="你的消息..." class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-colors resize-none"></textarea>
+                    <button type="submit" class="inline-flex items-center px-8 py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors mt-4">
+                        发送
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-8 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-gray-400">&copy; 2026 张三</p>
+            <p class="text-sm text-gray-300">软件测试工程师 · 深圳</p>
+        </div>
+    </footer>
+
+</body>
+</html>
