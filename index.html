@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小番茄 — AI 应用工程师</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%231e3a5f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='white' opacity='0.2'/%3E%3Ccircle cx='16' cy='12' r='3' fill='white' opacity='0.9'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%231e3a5f'/><circle cx='16' cy='16' r='8' fill='white' opacity='.2'/><circle cx='16' cy='12' r='3' fill='white' opacity='.9'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -128,7 +128,7 @@
     <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center">
             <a href="#" class="text-lg font-semibold tracking-tight text-gray-900">小番茄</a>
-            <div class="flex gap-10 text-sm font-medium text-gray-500 items-center">
+            <div class="flex gap-4 sm:gap-10 text-sm font-medium text-gray-500 items-center">
                 <a href="#about" class="hover:text-gray-900 transition-colors">关于</a>
                 <a href="#skills" class="hover:text-gray-900 transition-colors">技能</a>
                 <a href="#projects" class="hover:text-gray-900 transition-colors">项目</a>
@@ -146,7 +146,7 @@
         <div class="max-w-6xl mx-auto w-full">
             <div class="max-w-3xl reveal">
                 <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-8 tracking-[0.25em]">AI Application Engineer · 电子信息科学与技术</p>
-                <h1 class="text-5xl sm:text-6xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8">
                     你好，我是<br>
                     <span class="font-semibold name-gradient">小番茄</span>
                 </h1>
@@ -154,17 +154,17 @@
                     专注大语言模型（LLM）驱动的软件工程提效。
                     我相信 AI 不是工具的补充，而是生产力的底座。
                 </p>
-                <div class="flex gap-5">
-                    <a href="#contact" class="inline-flex items-center px-8 py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors">
+                <div class="flex flex-wrap gap-3 sm:gap-5">
+                    <a href="#contact" class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors">
                         联系我
                         <svg class="w-4 h-4 ml-2 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/></svg>
                     </a>
-                    <a href="#skills" class="inline-flex items-center px-8 py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
+                    <a href="#skills" class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
                         查看技能栈
                     </a>
-                    <a href="小番茄_AI应用工程师_简历.pdf" download class="inline-flex items-center px-8 py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 dark:border-gray-700 rounded-full">
+                    <a href="小番茄_AI应用工程师_简历.pdf" download class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 dark:border-gray-700 rounded-full">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-                        下载简历 PDF
+                        下载 PDF
                     </a>
                 </div>
             </div>
@@ -188,8 +188,8 @@
                     </div>
                 </div>
                 <div class="flex justify-center lg:justify-end">
-                    <div class="w-72 h-72 rounded-2xl overflow-hidden select-none avatar-box reveal">
-                        <img src="头像.jpg" alt="头像" class="w-full h-full object-cover">
+                    <div class="w-48 h-48 sm:w-72 sm:h-72 rounded-2xl overflow-hidden select-none avatar-box reveal mx-auto lg:mx-0">
+                        <img src="avatar.jpg" alt="头像" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -215,7 +215,7 @@
             </div>
 
             <!-- Core Skills List -->
-            <div class="grid md:grid-cols-2 gap-x-20 gap-y-10 reveal-stagger">
+            <div class="grid md:grid-cols-2 gap-x-10 lg:gap-x-20 gap-y-10 reveal-stagger">
                 <!-- Prompt Engineering -->
                 <div class="flex items-center gap-5 group">
                     <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
@@ -521,19 +521,19 @@
             <div class="grid md:grid-cols-2 gap-y-14 gap-x-20 mb-24 reveal">
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">邮箱</p>
-                    <a href="mailto:3022459473@qq.com" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">3022459473@qq.com</a>
+                    <a href="mailto:3022459473@qq.com" class="text-xl sm:text-2xl font-light text-gray-900 hover:text-accent transition-colors break-all">3022459473@qq.com</a>
                 </div>
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">电话</p>
-                    <a href="tel:+8619186406889" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">191-8640-6889</a>
+                    <a href="tel:+8619186406889" class="text-xl sm:text-2xl font-light text-gray-900 hover:text-accent transition-colors">191-8640-6889</a>
                 </div>
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">GitHub</p>
-                    <a href="https://github.com/lyadang128-cute" target="_blank" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">github.com/lyadang128-cute</a>
+                    <a href="https://github.com/lyadang128-cute" target="_blank" class="text-xl sm:text-2xl font-light text-gray-900 hover:text-accent transition-colors break-all">github.com/lyadang128-cute</a>
                 </div>
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">微信</p>
-                    <span class="text-2xl font-light text-gray-900">xiaofanqie_ai</span>
+                    <span class="text-xl sm:text-2xl font-light text-gray-900">xiaofanqie_ai</span>
                 </div>
             </div>
 
