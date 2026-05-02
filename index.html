@@ -7,12 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        accent: '#1e3a5f',      //deep blue
-                        'accent-light': '#2c5282',      //light blue
-                        'accent-subtle': '#ebf0f7',      //lighter blue
+                        accent: '#1e3a5f',
+                        'accent-light': '#2c5282',
+                        'accent-subtle': '#ebf0f7',
                     }
                 }
             }
@@ -81,6 +82,42 @@
 
         /* Quote decorative */
         .quote-mark { font-size: 6rem; line-height: 0; color: rgba(30,58,95,0.08); user-select: none; }
+
+        /* Dark mode */
+        .dark body { background-color: #0f172a; color: #e2e8f0; }
+        .dark nav { background-color: rgba(15,23,42,0.85); border-bottom-color: #1e293b; }
+        .dark nav a.hover\:text-gray-900:hover { color: #e2e8f0; }
+        .dark .bg-white { background-color: #0f172a; }
+        .dark .bg-gray-50 { background-color: #1e293b; }
+        .dark .bg-gray-100 { background-color: #334155; }
+        .dark .bg-gray-200 { background-color: #1e293b; }
+        .dark .text-gray-900 { color: #e2e8f0; }
+        .dark .text-gray-500 { color: #94a3b8; }
+        .dark .text-gray-400 { color: #64748b; }
+        .dark .text-gray-300 { color: #475569; }
+        .dark .border-gray-100 { border-color: #1e293b; }
+        .dark .border-gray-200 { border-color: #334155; }
+        .dark .border-b-gray-200 { border-bottom-color: #334155; }
+        .dark .placeholder-gray-300::placeholder { color: #475569; }
+        .dark .text-accent { color: #93c5fd; }
+        .dark .text-accent\/60 { color: rgba(147,197,253,0.7); }
+        .dark .text-accent\/40 { color: rgba(147,197,253,0.5); }
+        .dark .bg-accent { background-color: #3b82f6; }
+        .dark .bg-accent\/50 { background-color: rgba(59,130,246,0.5); }
+        .dark .bg-accent\/10 { background-color: rgba(59,130,246,0.15); }
+        .dark .hover\:bg-accent-light:hover { background-color: #60a5fa; }
+        .dark .hover\:text-gray-900:hover { color: #e2e8f0; }
+        .dark .hover\:text-accent:hover { color: #93c5fd; }
+        .dark .hover\:border-accent\/30:hover { border-color: rgba(147,197,253,0.4); }
+        .dark .name-gradient { background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .dark .hero-grid { background-image: radial-gradient(circle, rgba(147,197,253,0.06) 1px, transparent 1px); }
+        .dark .avatar-box { box-shadow: 0 0 0 1px rgba(147,197,253,0.12), 0 20px 60px -20px rgba(59,130,246,0.2); }
+        .dark .skill-bar:hover { background: linear-gradient(90deg, #60a5fa, #93c5fd); }
+        .dark input:focus, .dark textarea:focus { box-shadow: 0 2px 0 rgba(147,197,253,0.5); }
+        .dark input, .dark textarea { color: #e2e8f0; }
+        .dark .tag-hover:hover { box-shadow: 0 4px 12px rgba(59,130,246,0.1); }
+        .dark nav a { color: #94a3b8; }
+        .dark select, .dark option { background: #1e293b; color: #e2e8f0; }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -89,11 +126,15 @@
     <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center">
             <a href="#" class="text-lg font-semibold tracking-tight text-gray-900">小番茄</a>
-            <div class="flex gap-10 text-sm font-medium text-gray-500">
+            <div class="flex gap-10 text-sm font-medium text-gray-500 items-center">
                 <a href="#about" class="hover:text-gray-900 transition-colors">关于</a>
                 <a href="#skills" class="hover:text-gray-900 transition-colors">技能</a>
                 <a href="#projects" class="hover:text-gray-900 transition-colors">项目</a>
                 <a href="#contact" class="hover:text-gray-900 transition-colors">联系</a>
+                <button id="theme-toggle" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="切换主题">
+                    <svg id="sun-icon" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg id="moon-icon" class="w-4 h-4 text-gray-500 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+                </button>
             </div>
         </div>
     </nav>
@@ -119,6 +160,10 @@
                     <a href="#skills" class="inline-flex items-center px-8 py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
                         查看技能栈
                     </a>
+                    <a href="小番茄_AI应用工程师_简历.pdf" download class="inline-flex items-center px-8 py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 dark:border-gray-700 rounded-full">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                        下载简历 PDF
+                    </a>
                 </div>
             </div>
         </div>
@@ -141,8 +186,8 @@
                     </div>
                 </div>
                 <div class="flex justify-center lg:justify-end">
-                    <div class="w-72 h-72 rounded-2xl bg-gray-200 flex items-center justify-center text-8xl font-light text-gray-300 select-none avatar-box reveal">
-                        Y
+                    <div class="w-72 h-72 rounded-2xl overflow-hidden select-none avatar-box reveal">
+                        <img src="头像.jpg" alt="头像" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -474,11 +519,11 @@
             <div class="grid md:grid-cols-2 gap-y-14 gap-x-20 mb-24 reveal">
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">邮箱</p>
-                    <a href="mailto:xiaofanqie@example.com" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">xiaofanqie@example.com</a>
+                    <a href="mailto:3022459473@qq.com" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">3022459473@qq.com</a>
                 </div>
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">电话</p>
-                    <a href="tel:+8613800000000" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">138-0000-0000</a>
+                    <a href="tel:+8619186406889" class="text-2xl font-light text-gray-900 hover:text-accent transition-colors">191-8640-6889</a>
                 </div>
                 <div class="group">
                     <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">GitHub</p>
@@ -520,6 +565,27 @@
 
     <!-- Scroll animations -->
     <script>
+        // Theme toggle
+        const html = document.documentElement;
+        const toggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        toggle.addEventListener('click', () => {
+            const isDark = html.classList.toggle('dark');
+            sunIcon.classList.toggle('hidden', isDark);
+            moonIcon.classList.toggle('hidden', !isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
