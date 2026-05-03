@@ -80,6 +80,14 @@
             margin-top: 2px;
         }
 
+        /* Dismissed overrides hover — click-to-close even while hovering */
+        .skill-item.dismissed .skill-detail {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
         /* Skill item hover lift + scale */
         .skill-item {
             transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
@@ -566,18 +574,28 @@
 
         document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
-        // Skill tooltip toggle (mobile tap, desktop click also works)
+        // Skill detail toggle: click to lock open, click again to close (even while hovering)
         document.querySelectorAll('.skill-item').forEach(item => {
             item.addEventListener('click', function(e) {
                 const wasActive = this.classList.contains('active');
-                document.querySelectorAll('.skill-item.active').forEach(el => el.classList.remove('active'));
+                // Close all others and remove stale dismissed states
+                document.querySelectorAll('.skill-item.active, .skill-item.dismissed').forEach(el => {
+                    el.classList.remove('active', 'dismissed');
+                });
                 if (!wasActive) {
                     this.classList.add('active');
+                } else {
+                    // User clicked to close — suppress hover so it actually closes
+                    this.classList.add('dismissed');
                 }
+            });
+            // Reset dismissed state when mouse leaves, so hover works again next time
+            item.addEventListener('mouseleave', function() {
+                this.classList.remove('dismissed');
             });
         });
 
-        // Close tooltip when clicking outside
+        // Close all when clicking outside
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.skill-item')) {
                 document.querySelectorAll('.skill-item.active').forEach(el => el.classList.remove('active'));
