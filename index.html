@@ -327,18 +327,40 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-8 py-5 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-6 sm:px-8 py-4 sm:py-5 flex justify-between items-center">
             <a href="#" class="text-lg font-semibold tracking-tight text-gray-900">小番茄</a>
-            <div class="flex gap-4 sm:gap-10 text-sm font-medium text-gray-500 items-center">
+            <!-- Desktop links -->
+            <div class="hidden sm:flex gap-10 text-sm font-medium text-gray-500 items-center">
                 <a href="#about" class="hover:text-gray-900 transition-colors">关于</a>
                 <a href="#skills" class="hover:text-gray-900 transition-colors">技能</a>
                 <a href="#projects" class="hover:text-gray-900 transition-colors">项目</a>
                 <a href="#chat" class="hover:text-gray-900 transition-colors">AI 替身</a>
                 <a href="#contact" class="hover:text-gray-900 transition-colors">联系</a>
                 <button id="theme-toggle" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="切换主题">
-                    <svg id="sun-icon" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                    <svg id="moon-icon" class="w-4 h-4 text-gray-500 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+                    <svg id="sun-icon-d" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg id="moon-icon-d" class="w-4 h-4 text-gray-500 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
                 </button>
+            </div>
+            <!-- Mobile: theme + hamburger -->
+            <div class="flex sm:hidden items-center gap-2">
+                <button id="theme-toggle-m" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="切换主题">
+                    <svg id="sun-icon-m" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg id="moon-icon-m" class="w-4 h-4 text-gray-500 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+                </button>
+                <button id="menu-btn" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="菜单">
+                    <svg id="menu-icon" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                    <svg id="close-icon" class="w-5 h-5 text-gray-500 hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 dark:bg-gray-900/95 dark:border-gray-800">
+            <div class="px-6 py-5 flex flex-col gap-4 text-base font-medium text-gray-600 dark:text-gray-400">
+                <a href="#about" class="hover:text-gray-900 dark:hover:text-white transition-colors mobile-nav-link">关于</a>
+                <a href="#skills" class="hover:text-gray-900 dark:hover:text-white transition-colors mobile-nav-link">技能</a>
+                <a href="#projects" class="hover:text-gray-900 dark:hover:text-white transition-colors mobile-nav-link">项目</a>
+                <a href="#chat" class="hover:text-gray-900 dark:hover:text-white transition-colors mobile-nav-link">AI 替身</a>
+                <a href="#contact" class="hover:text-gray-900 dark:hover:text-white transition-colors mobile-nav-link">联系</a>
             </div>
         </div>
     </nav>
@@ -735,24 +757,49 @@
 
     <!-- Scroll animations -->
     <script>
-        // Theme toggle
+        // Theme toggle (desktop + mobile)
         const html = document.documentElement;
-        const toggle = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
+        const sunIcons = document.querySelectorAll('[id^="sun-icon"]');
+        const moonIcons = document.querySelectorAll('[id^="moon-icon"]');
+        const toggles = document.querySelectorAll('#theme-toggle, #theme-toggle-m');
+
+        function setThemeUI(isDark) {
+            sunIcons.forEach(el => el.classList.toggle('hidden', isDark));
+            moonIcons.forEach(el => el.classList.toggle('hidden', !isDark));
+        }
 
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
-            sunIcon.classList.add('hidden');
-            moonIcon.classList.remove('hidden');
+            setThemeUI(true);
         }
 
-        toggle.addEventListener('click', () => {
-            const isDark = html.classList.toggle('dark');
-            sunIcon.classList.toggle('hidden', isDark);
-            moonIcon.classList.toggle('hidden', !isDark);
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        toggles.forEach(t => {
+            t.addEventListener('click', () => {
+                const isDark = html.classList.toggle('dark');
+                setThemeUI(isDark);
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+        });
+
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden', isOpen);
+            closeIcon.classList.toggle('hidden', !isOpen);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
         });
 
         // Scroll reveal
