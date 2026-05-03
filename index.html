@@ -161,6 +161,105 @@
         .dark .tag-hover:hover { box-shadow: 0 4px 12px rgba(59,130,246,0.1); }
         .dark .placeholder-gray-300::placeholder { color: #475569; }
         .dark nav a { color: #94a3b8; }
+
+        /* ── AI Chat ── */
+        .chat-input-wrap {
+            display: flex;
+            align-items: flex-end;
+            gap: 0;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            background: #fff;
+            padding: 10px 12px 10px 18px;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .chat-input-wrap:focus-within {
+            border-color: #1e3a5f;
+            box-shadow: 0 0 0 3px rgba(30,58,95,0.08);
+        }
+        .dark .chat-input-wrap {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .dark .chat-input-wrap:focus-within {
+            border-color: #60a5fa;
+            box-shadow: 0 0 0 3px rgba(96,165,250,0.12);
+        }
+
+        .chat-input-wrap textarea {
+            flex: 1;
+            border: none;
+            outline: none;
+            resize: none;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            padding: 4px 0;
+            min-height: 28px;
+            max-height: 160px;
+            background: transparent;
+            color: #111827;
+        }
+        .dark .chat-input-wrap textarea { color: #e2e8f0; }
+        .chat-input-wrap textarea::placeholder { color: #9ca3af; }
+        .dark .chat-input-wrap textarea::placeholder { color: #64748b; }
+
+        .chat-send-btn {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #1e3a5f;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .chat-send-btn:hover { background: #2d5a8e; transform: scale(1.05); }
+        .dark .chat-send-btn { background: #3b82f6; }
+        .dark .chat-send-btn:hover { background: #60a5fa; }
+
+        .preset-chip {
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+        }
+        .preset-chip:hover { transform: translateY(-2px); }
+        .preset-chip:active { transform: scale(0.97); }
+
+        .chat-msg {
+            animation: msgIn 0.4s cubic-bezier(0.16,1,0.3,1) both;
+        }
+        @keyframes msgIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-msg.user { display: flex; justify-content: flex-end; }
+        .chat-msg.user .bubble {
+            background: #1e3a5f;
+            color: #fff;
+            border-radius: 18px 18px 6px 18px;
+            max-width: 75%;
+            padding: 12px 18px;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        .dark .chat-msg.user .bubble { background: #3b82f6; }
+
+        .chat-msg.ai { display: flex; justify-content: flex-start; }
+        .chat-msg.ai .bubble {
+            background: #f3f4f6;
+            color: #374151;
+            border-radius: 18px 18px 18px 6px;
+            max-width: 82%;
+            padding: 14px 18px;
+            font-size: 0.9375rem;
+            line-height: 1.7;
+        }
+        .dark .chat-msg.ai .bubble { background: #334155; color: #e2e8f0; }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -173,6 +272,7 @@
                 <a href="#about" class="hover:text-gray-900 transition-colors">关于</a>
                 <a href="#skills" class="hover:text-gray-900 transition-colors">技能</a>
                 <a href="#projects" class="hover:text-gray-900 transition-colors">项目</a>
+                <a href="#chat" class="hover:text-gray-900 transition-colors">AI 替身</a>
                 <a href="#contact" class="hover:text-gray-900 transition-colors">联系</a>
                 <button id="theme-toggle" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="切换主题">
                     <svg id="sun-icon" class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -482,6 +582,39 @@
         </div>
     </section>
 
+    <!-- AI Chat -->
+    <section id="chat" class="py-32 px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20">
+                <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-6 tracking-[0.25em]">AI Chat</p>
+                <h2 class="text-4xl sm:text-5xl font-light tracking-tight">与我的 AI 替身聊天</h2>
+                <p class="text-gray-400 mt-4 text-sm">以下回答由我精心准备，代表我的真实想法。点击问题或输入文字开始对话。</p>
+            </div>
+
+            <!-- Preset Questions -->
+            <div class="flex flex-wrap gap-3 mb-10" id="preset-chips">
+                <button class="preset-chip px-4 py-2.5 text-sm font-medium text-gray-500 bg-gray-50 border border-gray-100 rounded-full hover:text-accent hover:border-accent/30 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-accent dark:hover:border-accent/40" data-q="你的优势是什么？">你的优势是什么？</button>
+                <button class="preset-chip px-4 py-2.5 text-sm font-medium text-gray-500 bg-gray-50 border border-gray-100 rounded-full hover:text-accent hover:border-accent/30 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-accent dark:hover:border-accent/40" data-q="为什么不考研？">为什么不考研？</button>
+                <button class="preset-chip px-4 py-2.5 text-sm font-medium text-gray-500 bg-gray-50 border border-gray-100 rounded-full hover:text-accent hover:border-accent/30 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-accent dark:hover:border-accent/40" data-q="你对加班的看法？">你对加班的看法？</button>
+                <button class="preset-chip px-4 py-2.5 text-sm font-medium text-gray-500 bg-gray-50 border border-gray-100 rounded-full hover:text-accent hover:border-accent/30 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-accent dark:hover:border-accent/40" data-q="你未来三年的职业规划？">你未来三年的职业规划？</button>
+                <button class="preset-chip px-4 py-2.5 text-sm font-medium text-gray-500 bg-gray-50 border border-gray-100 rounded-full hover:text-accent hover:border-accent/30 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-accent dark:hover:border-accent/40" data-q="为什么选择 AI 应用工程师方向？">为什么选择 AI 应用工程师方向？</button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="space-y-6 mb-8 max-w-3xl"></div>
+
+            <!-- Input -->
+            <div class="max-w-3xl">
+                <div class="chat-input-wrap">
+                    <textarea id="chat-input" rows="1" placeholder="问我任何问题..."></textarea>
+                    <button class="chat-send-btn" id="chat-send" aria-label="发送">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="py-32 px-8 bg-gray-50">
         <div class="max-w-6xl mx-auto">
@@ -512,17 +645,18 @@
             <!-- Form -->
             <div class="max-w-xl">
                 <h3 class="text-lg font-medium text-gray-900 mb-8">发送消息</h3>
-                <form class="space-y-6" onsubmit="event.preventDefault()">
+                <form id="contact-form" class="space-y-6">
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <input type="text" placeholder="姓名" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300">
-                        <input type="email" placeholder="邮箱" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300">
+                        <input type="text" id="form-name" placeholder="姓名" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300">
+                        <input type="email" id="form-email" placeholder="邮箱" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300">
                     </div>
-                    <input type="text" placeholder="主题" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300">
-                    <textarea rows="3" placeholder="你的消息..." class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300 resize-none"></textarea>
+                    <input type="text" id="form-subject" placeholder="主题" class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300">
+                    <textarea rows="3" id="form-message" placeholder="你的消息..." class="w-full px-0 py-3 bg-transparent border-b border-gray-200 focus:border-accent focus:outline-none text-sm placeholder-gray-300 transition-all duration-300 resize-none"></textarea>
                     <button type="submit" class="inline-flex items-center px-8 py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors mt-4">
                         发送
                         <svg class="w-4 h-4 ml-2 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/></svg>
                     </button>
+                    <p class="text-xs text-gray-400 mt-2">点击发送将调用你本地的邮件客户端</p>
                 </form>
             </div>
 
@@ -605,6 +739,79 @@
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        // ── AI Chat ──
+        const answers = {
+            '你的优势是什么？': '我的核心优势是将 AI 深度融入开发全流程。通过 Claude Code 等工具，我能将需求分析到代码交付的周期缩短 60% 以上。同时我具备全栈视野——从 Java 后端到 Vue 前端，从数据库设计到 Docker 部署都能独立完成，不依赖他人配合。',
+            '为什么不考研？': '我更看重实战经验的积累。AI 行业迭代极快，学校里学一年的框架可能毕业时已过时。我希望在真实项目中快速成长，用产出证明能力，而不是用学历。更何况现在借助 AI，自学效率和深度已经远超传统课堂。',
+            '你对加班的看法？': '如果是项目关键节点或线上问题，我绝不推辞，并且会复盘改进流程防止再次发生。同时我也认为持续无效加班是效率低下的信号——我更擅长用 AI 工具提升效率，用更少时间交付更高产出，而不是用时长换结果。',
+            '你未来三年的职业规划？': '第一年深入掌握企业级 AI Agent 开发，能独立设计多智能体协作系统；第二到三年成为团队中的 AI 工程化推动者，帮助团队落地 AI 辅助开发流程。长期目标是成长为 AI 应用架构师，设计 AI 原生的软件交付体系。',
+            '为什么选择 AI 应用工程师方向？': '我坚信软件工程的未来是 AI 原生的。传统的增删改查开发模式将被 AI Agent 编排取代，我想站在这个变革的最前线——不是被 AI 替代，而是成为驾驭 AI 提效的人。这个方向既有技术深度，又能直接创造业务价值。'
+        };
+
+        const fallbackAnswer = '感谢你的提问！这是一个很好的问题。如果你想深入了解我的想法，欢迎直接发送邮件到 3022459473@qq.com 或添加微信 xiaofanqie_ai 与我交流。';
+
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSend = document.getElementById('chat-send');
+
+        function addMessage(role, text) {
+            const div = document.createElement('div');
+            div.className = 'chat-msg ' + role;
+            div.innerHTML = '<div class="bubble">' + text + '</div>';
+            chatMessages.appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+
+        function handleQuestion(question) {
+            addMessage('user', question);
+            setTimeout(() => {
+                addMessage('ai', answers[question] || fallbackAnswer);
+            }, 400);
+        }
+
+        // Preset chips
+        document.querySelectorAll('.preset-chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                handleQuestion(this.dataset.q);
+            });
+        });
+
+        // Send button
+        chatSend.addEventListener('click', () => {
+            const q = chatInput.value.trim();
+            if (!q) return;
+            handleQuestion(q);
+            chatInput.value = '';
+            chatInput.style.height = 'auto';
+        });
+
+        // Enter to send, Shift+Enter for newline
+        chatInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                chatSend.click();
+            }
+        });
+
+        // Auto-resize textarea
+        chatInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 160) + 'px';
+        });
+
+        // ── Contact form → mailto ──
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value.trim();
+            const email = document.getElementById('form-email').value.trim();
+            const subject = document.getElementById('form-subject').value.trim();
+            const message = document.getElementById('form-message').value.trim();
+            let body = message;
+            if (name) body = '来自: ' + name + (email ? ' (' + email + ')' : '') + '\n\n' + body;
+            const mailto = 'mailto:3022459473@qq.com?subject=' + encodeURIComponent(subject || '来自简历网站的消息') + '&body=' + encodeURIComponent(body);
+            window.location.href = mailto;
         });
     </script>
 </body>
