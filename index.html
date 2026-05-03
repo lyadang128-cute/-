@@ -53,67 +53,47 @@
         /* Skill bar hover */
         .skill-bar:hover { background: linear-gradient(90deg, #1e3a5f, #3b6fa0); transition: background 0.3s; }
 
-        /* Skill tooltip — appears below */
-        .skill-tooltip {
-            position: absolute;
-            top: calc(100% + 14px);
-            left: 50%;
-            transform: translateX(-50%) translateY(6px);
-            width: 320px;
-            max-width: calc(100vw - 40px);
-            padding: 18px 20px;
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.03);
+        /* Skill detail — expands below skill row on hover/tap */
+        .skill-detail {
+            max-height: 0;
+            overflow: hidden;
             opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.28s cubic-bezier(0.16,1,0.3,1), transform 0.28s cubic-bezier(0.16,1,0.3,1);
-            z-index: 50;
+            padding-top: 0;
+            margin-top: 0;
+            transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1),
+                        opacity 0.35s cubic-bezier(0.16,1,0.3,1),
+                        margin-top 0.45s cubic-bezier(0.16,1,0.3,1),
+                        padding-top 0.45s cubic-bezier(0.16,1,0.3,1);
         }
-        .skill-tooltip::after {
-            content: '';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 8px solid transparent;
-            border-bottom-color: #fff;
+        .skill-detail-inner {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 18px;
         }
-        .skill-tooltip::before {
-            content: '';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 9px solid transparent;
-            border-bottom-color: #e5e7eb;
-            margin-bottom: 1px;
+
+        .group:hover .skill-detail,
+        .skill-item.active .skill-detail {
+            max-height: 200px;
+            opacity: 1;
+            padding-top: 14px;
+            margin-top: 2px;
         }
 
         /* Skill item hover lift + scale */
         .skill-item {
             transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+            cursor: pointer;
         }
         .skill-item:hover {
             transform: scale(1.03);
         }
 
-        .group:hover .skill-tooltip,
-        .skill-item.active .skill-tooltip {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-            pointer-events: auto;
-        }
-
-        /* Dark mode tooltip */
-        .dark .skill-tooltip {
+        /* Dark mode skill detail */
+        .dark .skill-detail-inner {
             background: #1e293b;
             border-color: #334155;
-            box-shadow: 0 24px 48px -12px rgba(0,0,0,0.4), 0 0 0 1px rgba(147,197,253,0.06);
         }
-        .dark .skill-tooltip::after { border-bottom-color: #1e293b; }
-        .dark .skill-tooltip::before { border-bottom-color: #334155; }
 
         /* Hero subtle grid */
         .hero-grid { background-image: radial-gradient(circle, rgba(30,58,95,0.04) 1px, transparent 1px); background-size: 40px 40px; }
@@ -273,7 +253,7 @@
             <div class="grid md:grid-cols-2 gap-x-10 lg:gap-x-20 gap-y-10 reveal-stagger">
 
                 <!-- Skill A: AI 驱动开发 -->
-                <div class="skill-item group relative cursor-pointer">
+                <div class="skill-item group cursor-pointer">
                     <div class="flex items-center gap-5">
                         <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59"/></svg>
@@ -288,14 +268,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-tooltip text-left">
-                        <div class="text-xs font-semibold text-accent mb-2 tracking-wide">精通 (Advanced)</div>
-                        <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">已将 AI 深度融入全生命周期开发。熟练利用 Claude Code 进行大规模重构，通过 Prompt Engineering 解决复杂逻辑 Bug，具备"人机协作"的高效交付能力。</p>
+                    <div class="skill-detail">
+                        <div class="skill-detail-inner">
+                            <div class="text-xs font-semibold text-accent mb-2 tracking-wide">精通 (Advanced)</div>
+                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">已将 AI 深度融入全生命周期开发。熟练利用 Claude Code 进行大规模重构，通过 Prompt Engineering 解决复杂逻辑 Bug，具备"人机协作"的高效交付能力。</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Skill B: 前端开发 -->
-                <div class="skill-item group relative cursor-pointer">
+                <div class="skill-item group cursor-pointer">
                     <div class="flex items-center gap-5">
                         <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"/></svg>
@@ -310,14 +292,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-tooltip text-left">
-                        <div class="text-xs font-semibold text-accent mb-2 tracking-wide">熟练 (Proficient)</div>
-                        <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">能够独立构建响应式、组件化应用。擅长使用 Tailwind CSS 快速复刻高保真 UI，并结合 AI 实现复杂的交互动效与暗色主题适配。</p>
+                    <div class="skill-detail">
+                        <div class="skill-detail-inner">
+                            <div class="text-xs font-semibold text-accent mb-2 tracking-wide">熟练 (Proficient)</div>
+                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">能够独立构建响应式、组件化应用。擅长使用 Tailwind CSS 快速复刻高保真 UI，并结合 AI 实现复杂的交互动效与暗色主题适配。</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Skill C: 后端开发 -->
-                <div class="skill-item group relative cursor-pointer">
+                <div class="skill-item group cursor-pointer">
                     <div class="flex items-center gap-5">
                         <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"/></svg>
@@ -332,14 +316,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-tooltip text-left">
-                        <div class="text-xs font-semibold text-accent mb-2 tracking-wide">进阶 (Intermediate)</div>
-                        <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">熟悉 RESTful 架构设计，具备 MyBatis/JPA 持久层开发经验。能够利用 AI 快速生成测试用例，并基于 EL-Admin 等框架进行业务模块的定制开发。</p>
+                    <div class="skill-detail">
+                        <div class="skill-detail-inner">
+                            <div class="text-xs font-semibold text-accent mb-2 tracking-wide">进阶 (Intermediate)</div>
+                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">熟悉 RESTful 架构设计，具备 MyBatis/JPA 持久层开发经验。能够利用 AI 快速生成测试用例，并基于 EL-Admin 等框架进行业务模块的定制开发。</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Skill D: AI 工具链 -->
-                <div class="skill-item group relative cursor-pointer">
+                <div class="skill-item group cursor-pointer">
                     <div class="flex items-center gap-5">
                         <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"/></svg>
@@ -354,14 +340,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-tooltip text-left">
-                        <div class="text-xs font-semibold text-accent mb-2 tracking-wide">实战经验 (Practical)</div>
-                        <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">具备 RAG（检索增强生成）实战经验，能够利用 Chroma 向量数据库构建知识库应用。熟悉 Agent 智能体开发流程，了解多步推理链的调优技巧。</p>
+                    <div class="skill-detail">
+                        <div class="skill-detail-inner">
+                            <div class="text-xs font-semibold text-accent mb-2 tracking-wide">实战经验 (Practical)</div>
+                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">具备 RAG（检索增强生成）实战经验，能够利用 Chroma 向量数据库构建知识库应用。熟悉 Agent 智能体开发流程，了解多步推理链的调优技巧。</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Skill E: 数据库与部署 -->
-                <div class="skill-item group relative cursor-pointer">
+                <div class="skill-item group cursor-pointer">
                     <div class="flex items-center gap-5">
                         <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent/40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125v-3.75"/></svg>
@@ -376,9 +364,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="skill-tooltip text-left">
-                        <div class="text-xs font-semibold text-accent mb-2 tracking-wide">持续实践 (Continuous Practice)</div>
-                        <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">熟练使用 Git 进行版本控制。具备 Docker 容器化部署经验，能够独立通过 Nginx 完成反向代理配置与项目上线。</p>
+                    <div class="skill-detail">
+                        <div class="skill-detail-inner">
+                            <div class="text-xs font-semibold text-accent mb-2 tracking-wide">持续实践 (Continuous Practice)</div>
+                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">熟练使用 Git 进行版本控制。具备 Docker 容器化部署经验，能够独立通过 Nginx 完成反向代理配置与项目上线。</p>
+                        </div>
                     </div>
                 </div>
 
