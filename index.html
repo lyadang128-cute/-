@@ -230,6 +230,9 @@
         .preset-chip:active { transform: scale(0.97); }
 
         .chat-msg {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
             animation: msgIn 0.4s cubic-bezier(0.16,1,0.3,1) both;
         }
         @keyframes msgIn {
@@ -237,29 +240,87 @@
             to   { opacity: 1; transform: translateY(0); }
         }
 
-        .chat-msg.user { display: flex; justify-content: flex-end; }
+        .chat-msg.user { flex-direction: row-reverse; }
         .chat-msg.user .bubble {
             background: #1e3a5f;
             color: #fff;
             border-radius: 18px 18px 6px 18px;
-            max-width: 75%;
+            max-width: 70%;
             padding: 12px 18px;
             font-size: 0.9375rem;
             line-height: 1.6;
         }
         .dark .chat-msg.user .bubble { background: #3b82f6; }
 
-        .chat-msg.ai { display: flex; justify-content: flex-start; }
         .chat-msg.ai .bubble {
             background: #f3f4f6;
             color: #374151;
             border-radius: 18px 18px 18px 6px;
-            max-width: 82%;
+            max-width: 72%;
             padding: 14px 18px;
             font-size: 0.9375rem;
             line-height: 1.7;
+            min-height: 20px;
         }
         .dark .chat-msg.ai .bubble { background: #334155; color: #e2e8f0; }
+
+        /* Avatars */
+        .chat-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        .chat-avatar.ai-avatar {
+            background: #fef3c7;
+            box-shadow: 0 2px 8px rgba(251,191,36,0.2);
+        }
+        .chat-avatar.user-avatar {
+            background: #e0e7ff;
+            box-shadow: 0 2px 8px rgba(30,58,95,0.15);
+        }
+        .dark .chat-avatar.ai-avatar { background: #422006; box-shadow: 0 2px 8px rgba(251,191,36,0.1); }
+        .dark .chat-avatar.user-avatar { background: #1e3a5f; }
+
+        /* Typing indicator dots */
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+            padding: 14px 18px;
+        }
+        .typing-dots span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #9ca3af;
+            animation: dotBounce 1.4s infinite ease-in-out both;
+        }
+        .typing-dots span:nth-child(1) { animation-delay: 0s; }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dotBounce {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Typewriter cursor */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: #1e3a5f;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 0.8s step-end infinite;
+        }
+        .dark .typewriter-cursor { background: #93c5fd; }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -756,19 +817,60 @@
         const chatInput = document.getElementById('chat-input');
         const chatSend = document.getElementById('chat-send');
 
-        function addMessage(role, text) {
+        const aiAvatarHTML = '<div class="chat-avatar ai-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="6" fill="#f97316"/><path d="M10 5c0-1 2-3 2-3s2 2 2 3" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg></div>';
+        const userAvatarHTML = '<div class="chat-avatar user-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>';
+
+        function addMessage(role, text, withAvatar) {
             const div = document.createElement('div');
             div.className = 'chat-msg ' + role;
-            div.innerHTML = '<div class="bubble">' + text + '</div>';
+            let html = '';
+            if (withAvatar !== false) {
+                html += role === 'ai' ? aiAvatarHTML : userAvatarHTML;
+            }
+            html += '<div class="bubble">' + text + '</div>';
+            div.innerHTML = html;
             chatMessages.appendChild(div);
             div.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            return div;
+        }
+
+        function showTyping() {
+            const div = document.createElement('div');
+            div.className = 'chat-msg ai typing-indicator';
+            div.innerHTML = aiAvatarHTML + '<div class="bubble"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
+            chatMessages.appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            return div;
+        }
+
+        function typewriter(container, text, callback) {
+            const bubble = container.querySelector('.bubble');
+            bubble.textContent = '';
+            let i = 0;
+            const cursor = document.createElement('span');
+            cursor.className = 'typewriter-cursor';
+            bubble.appendChild(cursor);
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    bubble.insertBefore(document.createTextNode(text[i]), cursor);
+                    i++;
+                    container.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                } else {
+                    clearInterval(timer);
+                    cursor.remove();
+                    if (callback) callback();
+                }
+            }, 35);
         }
 
         function handleQuestion(question) {
-            addMessage('user', question);
+            addMessage('user', question, true);
+            const typingEl = showTyping();
+            const delay = 600 + Math.random() * 500;
             setTimeout(() => {
-                addMessage('ai', answers[question] || fallbackAnswer);
-            }, 400);
+                typingEl.classList.remove('typing-indicator');
+                typewriter(typingEl, answers[question] || fallbackAnswer);
+            }, delay);
         }
 
         // Preset chips
