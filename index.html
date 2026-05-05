@@ -913,7 +913,12 @@
             let body = message;
             if (name) body = '来自: ' + name + (email ? ' (' + email + ')' : '') + '\n\n' + body;
             const mailto = 'mailto:3022459473@qq.com?subject=' + encodeURIComponent(subject || '来自简历网站的消息') + '&body=' + encodeURIComponent(body);
-            window.location.href = mailto;
+            const a = document.createElement('a');
+            a.href = mailto;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         });
     </script>
 </body>
