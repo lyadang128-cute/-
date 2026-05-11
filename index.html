@@ -321,6 +321,60 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+
+        /* ── Terminal window ── */
+        .term-window {
+            background: #1e1e1e;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px -12px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.05);
+            font-family: 'SF Mono', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+        }
+        .term-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 18px;
+            background: #171717;
+            border-bottom: 1px solid #2d2d2d;
+        }
+        .term-dot { width: 11px; height: 11px; border-radius: 50%; }
+        .term-dot.red  { background: #ff5f57; }
+        .term-dot.yellow { background: #febc2e; }
+        .term-dot.green { background: #28c840; }
+        .term-title {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            font-family: inherit;
+        }
+        .term-body {
+            padding: 18px 20px;
+            min-height: 180px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #57c880;
+        }
+        .term-body .line {
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .term-body .prompt  { color: #60a5fa; }
+        .term-body .check   { color: #57c880; }
+        .term-body .result  { color: #fbbf24; }
+        .term-body .comment { color: #6b7280; }
+        .term-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: #57c880;
+            animation: blink 0.8s step-end infinite;
+            vertical-align: middle;
+            margin-left: 1px;
+        }
+        .dark .term-window { box-shadow: 0 24px 60px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03); }
     </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -346,28 +400,45 @@
     <!-- Hero -->
     <section class="min-h-screen flex items-center px-8 pt-24 pb-16 hero-grid">
         <div class="max-w-6xl mx-auto w-full">
-            <div class="max-w-3xl reveal">
-                <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-8 tracking-[0.25em]">AI Application Engineer · 电子信息科学与技术</p>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8">
-                    你好，我是<br>
-                    <span class="font-semibold name-gradient">小番茄</span>
-                </h1>
-                <p class="text-xl text-gray-500 font-light leading-relaxed max-w-xl mb-12">
-                    专注大语言模型（LLM）驱动的软件工程提效。
-                    我相信 AI 不是工具的补充，而是生产力的底座。
-                </p>
-                <div class="flex flex-wrap gap-3 sm:gap-5">
-                    <a href="#contact" class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors">
-                        联系我
-                        <svg class="w-4 h-4 ml-2 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/></svg>
-                    </a>
-                    <a href="#skills" class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
-                        查看技能栈
-                    </a>
-                    <a href="小番茄_AI应用工程师_简历.pdf" download class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 dark:border-gray-700 rounded-full">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-                        下载 PDF
-                    </a>
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                <!-- Left: text -->
+                <div class="max-w-3xl reveal">
+                    <p class="section-label text-xs font-semibold text-accent/60 uppercase mb-8 tracking-[0.25em]">AI Application Engineer · 电子信息科学与技术</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight leading-[1.1] mb-8">
+                        你好，我是<br>
+                        <span class="font-semibold name-gradient">小番茄</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-500 font-light leading-relaxed max-w-xl mb-12">
+                        专注大语言模型（LLM）驱动的软件工程提效。
+                        我相信 AI 不是工具的补充，而是生产力的底座。
+                    </p>
+                    <div class="flex flex-wrap gap-3 sm:gap-5">
+                        <a href="#contact" class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-colors">
+                            联系我
+                            <svg class="w-4 h-4 ml-2 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/></svg>
+                        </a>
+                        <a href="#skills" class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">
+                            查看技能栈
+                        </a>
+                        <a href="小番茄_AI应用工程师_简历.pdf" download class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-3.5 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 dark:border-gray-700 rounded-full">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+                            下载 PDF
+                        </a>
+                    </div>
+                </div>
+                <!-- Right: terminal -->
+                <div class="hidden lg:block reveal">
+                    <div class="term-window">
+                        <div class="term-bar">
+                            <span class="term-dot red"></span>
+                            <span class="term-dot yellow"></span>
+                            <span class="term-dot green"></span>
+                            <span class="term-title">claude_code.log</span>
+                        </div>
+                        <div class="term-body" id="term-body">
+                            <span class="term-cursor"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -902,6 +973,59 @@
             this.style.height = 'auto';
             this.style.height = Math.min(this.scrollHeight, 160) + 'px';
         });
+
+        // ── Terminal typing animation ──
+        const termBody = document.getElementById('term-body');
+        if (termBody) {
+            const lines = [
+                '<span class="prompt">&gt; cc</span> <span class="comment">"重构技能栏为5大分组 + 悬停详情框"</span>',
+                '  <span class="check">[分析]</span> 12项独立技能 → 合并为5大分组',
+                '  <span class="check">[实现]</span> CSS hover 展开 + JS tap 切换',
+                '  <span class="check">[适配]</span> 暗色模式 + 响应式布局',
+                '  <span class="check">[工具]</span> Tailwind CSS · IntersectionObserver',
+                '  <span class="result">✓ 200行代码 · 5分钟交付 · 0 Bug</span>',
+                '',
+                '<span class="prompt">&gt; cc</span> <span class="comment">"加一个AI替身聊天功能"</span>',
+                '  <span class="check">[创建]</span> 5个预设面试问题 + 高质量回答',
+                '  <span class="check">[设计]</span> Claude 风格输入框 + 打字机效果',
+                '  <span class="check">[交互]</span> 悬停详情框 · 点击切换 · 头像图标',
+                '  <span class="result">✓ 可用 · 3轮迭代完成</span>',
+                '',
+                '<span class="prompt">&gt; cc</span> <span class="comment">"部署到 Netlify，解决国内 DNS 问题"</span>',
+                '  <span class="check">[部署]</span> API 直传 · 30秒上线 · 国内秒开',
+                '  <span class="result">✓ xiaofanqie.netlify.app</span>'
+            ];
+            let lineIndex = 0;
+            let charIndex = 0;
+            let currentLineEl = null;
+
+            function typeNext() {
+                if (lineIndex >= lines.length) return;
+                if (charIndex === 0) {
+                    currentLineEl = document.createElement('span');
+                    currentLineEl.className = 'line';
+                    termBody.insertBefore(currentLineEl, termBody.lastElementChild);
+                }
+                const line = lines[lineIndex];
+                currentLineEl.innerHTML = line.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex < line.length) {
+                    setTimeout(typeNext, 18 + Math.random() * 12);
+                } else {
+                    charIndex = 0;
+                    lineIndex++;
+                    setTimeout(typeNext, 80);
+                }
+            }
+
+            const termObserver = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    setTimeout(typeNext, 600);
+                    termObserver.disconnect();
+                }
+            }, { threshold: 0.3 });
+            termObserver.observe(document.querySelector('.term-window'));
+        }
 
         // ── Contact form → mailto ──
         document.getElementById('contact-form').addEventListener('submit', function(e) {
