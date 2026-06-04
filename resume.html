@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 2cm 1.8cm 1.8cm 1.8cm;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.65;
+    color: #2d2d2d;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #1e3a5f;
+  }
+  .name {
+    font-size: 24pt;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #1e3a5f;
+    margin-bottom: 3px;
+  }
+  .title {
+    font-size: 10.5pt;
+    color: #555;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .contact-row {
+    text-align: center;
+    font-size: 9pt;
+    color: #666;
+  }
+  .contact-row span {
+    margin: 0 10px;
+    white-space: nowrap;
+  }
+  .contact-row a {
+    color: #1e3a5f;
+    text-decoration: none;
+  }
+
+  .section { margin-bottom: 13px; }
+  .section.avoid-break { page-break-inside: avoid; }
+  .section-title {
+    font-size: 11pt;
+    font-weight: 700;
+    color: #1e3a5f;
+    letter-spacing: 2px;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .objective p { font-size: 10pt; color: #444; line-height: 1.7; }
+
+  .edu-row { margin-bottom: 3px; }
+  .edu-row .school { font-weight: 600; font-size: 10.5pt; }
+  .edu-row .date { float: right; font-size: 9pt; color: #888; }
+  .edu-detail { font-size: 9.5pt; color: #555; margin-top: 1px; clear: both; }
+
+  .skill-block { margin-bottom: 6px; }
+  .skill-label {
+    font-weight: 600;
+    font-size: 10pt;
+    color: #1e3a5f;
+    display: inline-block;
+    width: 105px;
+    vertical-align: top;
+  }
+  .skill-text {
+    display: inline;
+    font-size: 9.5pt;
+    color: #444;
+  }
+  .skill-tags { margin-top: 6px; }
+  .skill-tag {
+    display: inline-block;
+    font-size: 8.5pt;
+    padding: 2px 9px;
+    margin: 0 4px 4px 0;
+    background: #ebf0f7;
+    color: #1e3a5f;
+    border-radius: 2px;
+  }
+
+  .project { margin-bottom: 11px; }
+  .proj-header { margin-bottom: 2px; }
+  .proj-name { font-weight: 700; font-size: 10.5pt; color: #1e3a5f; }
+  .proj-date { float: right; font-size: 8.5pt; color: #999; }
+  .proj-stack { font-size: 8.5pt; color: #777; margin-bottom: 1px; }
+  .proj-desc { font-size: 9.5pt; color: #444; line-height: 1.6; }
+  .proj-desc ul { padding-left: 16px; margin-top: 1px; }
+  .proj-desc li { margin-bottom: 1px; }
+
+  .intern-item { margin-bottom: 8px; }
+  .intern-header { margin-bottom: 1px; }
+  .intern-company { font-weight: 600; font-size: 10pt; }
+  .intern-date { float: right; font-size: 8.5pt; color: #999; }
+  .intern-role { font-size: 9pt; color: #555; }
+  .intern-desc { font-size: 9.5pt; color: #444; line-height: 1.6; }
+
+  .self-text { font-size: 9.5pt; color: #444; line-height: 1.7; }
+
+  .clearfix::after { content: ""; display: table; clear: both; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="name">小番茄</div>
+  <div class="title">AI 应用工程师 / 全栈开发 · 2026 届应届毕业生</div>
+  <div class="contact-row">
+    <span>邮箱：3022459473@qq.com</span>
+    <span>电话：191-8640-6889</span>
+    <span>意向：深圳</span>
+    <span><a href="https://github.com/lyadang128-cute">GitHub</a></span>
+    <span>微信：xiaofanqie_ai</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">求职意向</div>
+  <div class="objective">
+    <p>AI 应用工程师</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">教育背景</div>
+  <div class="edu-row clearfix">
+    <span class="school">湖北工程学院 · 电子信息科学与技术（本科）</span>
+    <span class="date">2022.09 — 2026.06</span>
+  </div>
+  <div class="edu-detail">主修课程：C语言程序设计、Python程序设计、模拟电路、数字电路、电路分析、电子系统设计</div>
+</div>
+
+<div class="section">
+  <div class="section-title">核心竞争力</div>
+
+  <div class="skill-block">
+    <span class="skill-label">AI 驱动开发 ✦</span>
+    <span class="skill-text">精通 Claude Code 命令行工作流、Prompt Engineering，能够利用 AI 进行架构设计、代码审计、Bug 自动修复及文档生成。熟悉 LangChain、RAG 检索增强生成、Agent 智能体开发，具备 Function Calling 与多步推理链实战经验。</span>
+  </div>
+
+  <div class="skill-block">
+    <span class="skill-label">后端开发</span>
+    <span class="skill-text">Java、Spring Boot，熟悉 eladmin 开源架构与 RBAC 权限模型；Python、FastAPI，具备 RESTful API 设计与开发能力；了解 MyBatis、JPA 等持久层框架。</span>
+  </div>
+
+  <div class="skill-block">
+    <span class="skill-label">前端开发</span>
+    <span class="skill-text">Vue.js、HTML5、CSS3、Tailwind CSS，能够快速构建现代响应式 UI 界面，具备暗色主题、动效交互等细节打磨能力。</span>
+  </div>
+
+  <div class="skill-block">
+    <span class="skill-label">数据库 / 部署</span>
+    <span class="skill-text">MySQL、Redis 基础配置与调优；Docker 容器化部署；Nginx 反向代理；Git + GitHub CI/CD 工作流；Vercel 一键部署。</span>
+  </div>
+
+  <div class="skill-block">
+    <span class="skill-label">测试与质量保障</span>
+    <span class="skill-text">具备自动化测试思维，能利用 AI 生成测试用例；熟悉软件测试全流程文档编写（测试用例、缺陷报告、测试总结）；掌握 Postman、Selenium 等测试工具；具备嵌入式系统硬件联动测试经验。</span>
+  </div>
+
+  <div class="skill-block">
+    <span class="skill-label">工具生态</span>
+    <span class="skill-text">Cursor、Ollama、Chroma、HuggingFace、vLLM、Streamlit、NumPy / Pandas、Shell / Terminal-based Workflow。</span>
+  </div>
+
+  <div class="skill-tags">
+    <span class="skill-tag">Java</span>
+    <span class="skill-tag">Spring Boot</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">FastAPI</span>
+    <span class="skill-tag">Vue.js</span>
+    <span class="skill-tag">LangChain</span>
+    <span class="skill-tag">RAG</span>
+    <span class="skill-tag">Agent</span>
+    <span class="skill-tag">Prompt Engineering</span>
+    <span class="skill-tag">MySQL</span>
+    <span class="skill-tag">Redis</span>
+    <span class="skill-tag">Docker</span>
+    <span class="skill-tag">Nginx</span>
+    <span class="skill-tag">Git</span>
+    <span class="skill-tag">Tailwind CSS</span>
+    <span class="skill-tag">Claude Code</span>
+    <span class="skill-tag">Selenium</span>
+    <span class="skill-tag">Postman</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">项目经历</div>
+
+  <div class="project avoid-break">
+    <div class="proj-header clearfix">
+      <span class="proj-name">EL-Admin 后台管理系统二次开发</span>
+      <span class="proj-date">2025.12 — 2026.02</span>
+    </div>
+    <div class="proj-stack">Claude Code · Java · Spring Boot · eladmin · Vue.js · MySQL · Nginx</div>
+    <div class="proj-desc">
+      <ul>
+        <li>基于 EL-Admin（Spring Boot + Vue.js）前后端分离框架进行企业级后台管理系统定制开发</li>
+        <li>独立完成环境搭建、数据库设计、业务模块开发与服务器部署全流程，新增数据可视化看板与批量操作功能</li>
+        <li>通过 AI 指令快速完成前后端环境搭建及依赖管理，将数周的系统熟悉周期压缩至小时级，验证了「人机协作」在全栈项目中的效率优势</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="project avoid-break">
+    <div class="proj-header clearfix">
+      <span class="proj-name">AI Agent 智能工具开发</span>
+      <span class="proj-date">2026.02 — 2026.03</span>
+    </div>
+    <div class="proj-stack">LangChain · Ollama · Python · Agent · Function Calling</div>
+    <div class="proj-desc">
+      <ul>
+        <li>使用 LangChain + Ollama 搭建本地 Agent 实验环境，实现工具调用（Function Calling）、多步推理链与记忆管理</li>
+        <li>完成天气查询、文档摘要、代码解释等场景的 Agent 原型，通过 Prompt 调优对比不同策略下的任务完成质量</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="project avoid-break">
+    <div class="proj-header clearfix">
+      <span class="proj-name">AI 智能助手应用（RAG + Agent）</span>
+      <span class="proj-date">2025.09 — 2025.12</span>
+    </div>
+    <div class="proj-stack">LangChain · FastAPI · Chroma · Docker · Streamlit</div>
+    <div class="proj-desc">
+      <ul>
+        <li>基于 LangChain + FastAPI 搭建 RAG 检索增强生成系统，实现文档语义检索与智能问答</li>
+        <li>集成多轮对话记忆与流式输出，利用 Chroma 向量数据库存储和检索文档 Embedding</li>
+        <li>使用 Docker 完成服务容器化，实现一键部署与环境一致性</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="project avoid-break">
+    <div class="proj-header clearfix">
+      <span class="proj-name">AI 驱动个人网页开发</span>
+      <span class="proj-date">2026.04 — 至今</span>
+    </div>
+    <div class="proj-stack">Claude Code · HTML5 · Tailwind CSS · JavaScript · GitHub Pages</div>
+    <div class="proj-desc">
+      <ul>
+        <li>借助 Claude Code 进行 AI 辅助前端开发，从零构建个人作品集网站，作为「Digital Creator」身份的对外窗口</li>
+        <li>通过自然语言描述需求驱动 Tailwind CSS 样式设计、暗色主题切换、滚动动效与响应式布局</li>
+        <li>实践 AI 驱动的全流程开发模式：需求分析 → 原型迭代 → 部署发布，整合 GitHub CI/CD 实现代码提交即部署</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="project avoid-break">
+    <div class="proj-header clearfix">
+      <span class="proj-name">RAG 知识库系统 · 企业级文档检索与智能问答</span>
+      <span class="proj-date">2026.05 — 2026.06</span>
+    </div>
+    <div class="proj-stack">FastAPI · Vue 3 · Qdrant · Docker · LangChain · DeepSeek API · Sentence-Transformers</div>
+    <div class="proj-desc">
+      <ul>
+        <li>从零构建完整的 RAG 检索增强生成知识库系统，支持 PDF / Word / Excel / PPT / TXT / 网页等多格式文档智能解析与入库，集成 PaddleOCR 图片文字识别</li>
+        <li>实现混合检索架构：Dense（BGE-large 1024D）+ Sparse（BM25）双路召回 + RRF 融合 + bge-reranker-v2-m3 交叉精排，显著提升检索命中率</li>
+        <li>基于 FastAPI + SSE 实现流式 AI 对话，支持多知识库切换、QA Memory 记忆系统、快速直搜模式</li>
+        <li>Vue 3 + Vite 前端，Docker Compose 一键部署（Qdrant + 后端 + 前端），内置 RAGAS 评测工具，支持调参验证</li>
+        <li>AI 驱动全流程开发，从架构设计到代码实现均由 Claude Code 辅助完成，开源发布至 GitHub</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="project avoid-break">
+    <div class="proj-header clearfix">
+      <span class="proj-name">黑神话：悟空「天命人」粉丝站</span>
+      <span class="proj-date">2026.05</span>
+    </div>
+    <div class="proj-stack">Next.js · Claude Code · Tailwind CSS · DeepSeek API · Vercel</div>
+    <div class="proj-desc">
+      <ul>
+        <li>基于 Next.js + Claude Code 从零构建的《黑神话：悟空》主题粉丝致敬站，6 大板块单页应用</li>
+        <li>涵盖天命之路世界观、兵器谱、七十二变（10种化身）、影神图（203位人物）、珍玩、酒食系统</li>
+        <li>暗黑东方美学设计：径向渐变光影、画卷纹理背景、金属金点缀、响应式 clamp() 排版</li>
+        <li>集成 DeepSeek API 实现「AI 大圣」智能问答，以孙悟空口吻回答西游相关问题，含 13 条知识库</li>
+        <li>纯 AI 驱动开发，零手写 CSS 媒体查询，100% 由 Claude Code 通过自然语言指令生成</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">自我评价</div>
+  <div class="self-text">
+    <p>AI Native 开发者，对新技术和工具保持高度敏感。虽在传统学科考试中表现平平，但在实战工程、工具探索和实际解决问题方面具备极高热情与执行力。不考研，全心投入 AI 工业革命浪潮，追求代码的高质量交付与价值创造。</p>
+    <p style="margin-top:4px;">具备电子信息 + 嵌入式技术基础，能从软硬件协同视角理解系统架构。拥有扎实的测试思维与质量意识，关注软件全流程质量保障。当前工具链已全面迁移至 Terminal + AI 协作模式，熟练使用 Claude Code、Cursor 等 AI 开发工具进行日常编码，渴望在 AI 应用工程领域持续深耕。</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -457,7 +457,7 @@
                     <h2 class="text-4xl sm:text-5xl font-light tracking-tight mb-10">关于我</h2>
                     <div class="space-y-6 text-gray-500 leading-relaxed text-lg font-light">
                         <p>
-                            <strong class="text-gray-900 font-medium">电子信息科学与技术</strong>专业在读，AI 应用工程师方向（实习/校招）。专注于大语言模型驱动的软件工程提效，实战 LangChain RAG 与 Agent 开发。已完成 4 个 AI 驱动全栈项目，全部由自然语言指令驱动开发。
+                            <strong class="text-gray-900 font-medium">电子信息科学与技术</strong>专业在读，AI 应用工程师方向（实习/校招）。专注于大语言模型驱动的软件工程提效，实战 LangChain RAG 与 Agent 开发。已完成 5 个 AI 驱动全栈项目，全部由自然语言指令驱动开发。
                         </p>
                         <p>
                             具备 <strong class="text-gray-900 font-medium">全栈开发基础</strong>，熟悉 Java Spring Boot + Vue 架构，能独立完成项目部署与二次开发。拥有软件测试背景，擅长利用 AI 工具生成高质量测试用例与自动化脚本。注重工程落地与实战交付，追求代码的优雅与可维护性。
@@ -585,7 +585,7 @@
                     <div class="skill-detail">
                         <div class="skill-detail-inner">
                             <div class="text-xs font-semibold text-accent mb-2 tracking-wide">实战经验 (Practical)</div>
-                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">具备 RAG（检索增强生成）实战经验，能够利用 Chroma 向量数据库构建知识库应用。熟悉 Agent 智能体开发流程，了解多步推理链的调优技巧。</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-300 leading-relaxed">具备 RAG（检索增强生成）实战经验，能够利用 Qdrant / Chroma 向量数据库构建知识库应用，掌握混合检索与交叉精排技术。熟悉 Agent 智能体开发流程，了解多步推理链的调优技巧。</p>
                         </div>
                     </div>
                 </div>
@@ -620,6 +620,7 @@
             <div class="mt-24 pt-16 border-t border-gray-100">
                 <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-8">工具生态</p>
                 <div class="flex flex-wrap gap-3">
+                    <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 tag-hover">Qdrant</span>
                     <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 tag-hover">Ollama</span>
                     <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 tag-hover">Chroma</span>
                     <span class="px-5 py-2.5 text-sm font-medium text-gray-400 bg-gray-50 rounded-full border border-gray-100 tag-hover">HuggingFace</span>
@@ -692,6 +693,33 @@
                 </div>
 
                 <!-- Project 3 -->
+                <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start project-card reveal">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2026.05 — 2026.06</p>
+                        <h3 class="text-2xl font-light text-gray-900 mb-2">RAG 知识库系统 · 企业级文档检索与智能问答</h3>
+                        <p class="text-sm text-gray-400">全栈项目 · RAG · 开源</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 leading-relaxed mb-5">
+                            从零构建完整的 <strong class="text-gray-900 font-medium">RAG 检索增强生成</strong> 知识库系统。支持 PDF / Word / Excel / PPT / TXT / 网页等多格式文档解析入库，
+                            集成 <strong class="text-gray-900 font-medium">PaddleOCR</strong> 图片文字识别。
+                            检索端实现 Dense（BGE-large 1024D）+ Sparse（BM25）<strong class="text-gray-900 font-medium">混合检索</strong> + RRF 融合 + bge-reranker-v2-m3 交叉精排，
+                            对话端基于 FastAPI + SSE <strong class="text-gray-900 font-medium">流式输出</strong>，支持多知识库切换、QA Memory 记忆系统。
+                            前端 Vue 3 + Vite，Docker Compose 一键部署，内置 RAGAS 评测工具。AI 驱动全流程开发，开源发布至 GitHub。
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">FastAPI</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Vue 3</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Qdrant</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">LangChain</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">DeepSeek API</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Docker</span>
+                            <a href="https://github.com/lyadang128-cute/rag-local" target="_blank" class="px-3 py-1 text-xs font-medium text-accent bg-accent-subtle rounded-full border border-accent/20 hover:bg-accent/15 transition-colors">源码 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
                 <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start project-card reveal">
                     <div>
                         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2026.05</p>
