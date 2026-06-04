@@ -218,14 +218,17 @@
 
   <div class="project avoid-break">
     <div class="proj-header clearfix">
-      <span class="proj-name">AI Agent 智能工具开发</span>
+      <span class="proj-name">ReAct Agent 智能工具 · 从零手搓</span>
       <span class="proj-date">2026.02 — 2026.03</span>
     </div>
-    <div class="proj-stack">LangChain · Ollama · Python · Agent · Function Calling</div>
+    <div class="proj-stack">Python · DeepSeek API · ReAct · DuckDuckGo · Function Calling</div>
     <div class="proj-desc">
       <ul>
-        <li>使用 LangChain + Ollama 搭建本地 Agent 实验环境，实现工具调用（Function Calling）、多步推理链与记忆管理</li>
-        <li>完成天气查询、文档摘要、代码解释等场景的 Agent 原型，通过 Prompt 调优对比不同策略下的任务完成质量</li>
+        <li>从零实现 ReAct 模式 Agent 核心循环（Think → Act → Observe），不依赖 LangChain 等上层框架</li>
+        <li>手写 6 个工具：DuckDuckGo 联网搜索、网页抓取与正文提取、Word 文档格式化生成、文件读写、目录管理</li>
+        <li>基于 DeepSeek API（OpenAI 兼容协议），实现 Function Calling 多步推理链</li>
+        <li>自建会话量化日志系统，追踪每轮 token 消耗、工具调用频次与任务耗时</li>
+        <li>实战场景：AI 资讯整理助手 — 搜索中英文最新资讯 → 抓取详情 → 生成格式化 Word 报告</li>
       </ul>
     </div>
   </div>

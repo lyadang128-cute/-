@@ -673,20 +673,21 @@
                 <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start project-card reveal">
                     <div>
                         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2026.02 — 2026.03</p>
-                        <h3 class="text-2xl font-light text-gray-900 mb-2">AI Agent 智能工具开发</h3>
+                        <h3 class="text-2xl font-light text-gray-900 mb-2">ReAct Agent 智能工具 · 从零手搓</h3>
                         <p class="text-sm text-gray-400">学习项目 · Agent 开发</p>
                     </div>
                     <div>
                         <p class="text-gray-500 leading-relaxed mb-5">
-                            使用 <strong class="text-gray-900 font-medium">LangChain + Ollama</strong> 搭建本地 Agent 实验环境，实现工具调用（Function Calling）、
-                            多步推理链与记忆管理。完成天气查询、文档摘要、代码解释等场景的 Agent 原型，
-                            通过 Prompt 调优对比不同策略下的 Agent 任务完成质量。
+                            从零实现 <strong class="text-gray-900 font-medium">ReAct 模式 Agent</strong> 核心循环（Think → Act → Observe），
+                            不依赖 LangChain 等上层框架。手写 6 个工具：DuckDuckGo 联网搜索、网页抓取与正文提取、
+                            Word 文档格式化生成、文件读写、目录管理。基于 <strong class="text-gray-900 font-medium">DeepSeek API</strong> 实现 Function Calling 多步推理链，
+                            自建会话量化日志系统追踪 token 消耗与工具调用频次。实战场景为 AI 资讯整理助手，搜索中英文最新资讯并生成格式化 Word 报告。
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">LangChain</span>
-                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Ollama</span>
-                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Agent</span>
                             <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Python</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">DeepSeek API</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">ReAct</span>
+                            <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Agent</span>
                             <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">Function Calling</span>
                         </div>
                     </div>
