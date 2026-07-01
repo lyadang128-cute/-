@@ -974,67 +974,14 @@
             }, 35);
         }
 
-        // 流式打字机（从 SSE chunk 逐字追加）
-        function streamTypewriter(bubble, container) {
-            let textBuffer = '';
-            const cursor = document.createElement('span');
-            cursor.className = 'typewriter-cursor';
-            bubble.appendChild(cursor);
-            let i = 0;
-            let timer = null;
-
-            function flush() {
-                if (timer) return;
-                timer = setInterval(() => {
-                    if (i < textBuffer.length) {
-                        const ch = textBuffer[i];
-                        bubble.insertBefore(document.createTextNode(ch), cursor);
-                        i++;
-                        container.scrollIntoView({ behavior: 'smooth', block: 'end' });
-                    } else {
-                        clearInterval(timer);
-                        timer = null;
-                    }
-                }, 20);
-            }
-
-            return {
-                append(chunk) {
-                    // 解析 DeepSeek SSE: "data: {...}\\n\\n"
-                    const lines = (textBuffer + chunk).split('\n');
-                    for (const line of lines) {
-                        if (line.startsWith('data: ')) {
-                            const raw = line.slice(6).trim();
-                            if (raw === '[DONE]') continue;
-                            try {
-                                const json = JSON.parse(raw);
-                                const content = json.choices?.[0]?.delta?.content;
-                                if (content) {
-                                    textBuffer += content;
-                                    flush();
-                                }
-                            } catch (e) { /* skip broken chunks */ }
-                        }
-                    }
-                },
-                done() {
-                    // 清空剩余缓冲
-                    const checkDone = setInterval(() => {
-                        if (!timer && i >= textBuffer.length) {
-                            cursor.remove();
-                            clearInterval(checkDone);
-                        }
-                    }, 50);
-                }
-            };
-        }
-
-        // 真正的 AI 回答：调用 Netlify Function → DeepSeek API（流式）
+        // 真正的 AI 回答：调用 Netlify Function → DeepSeek API（流式，直接显示）
         async function askAI(question) {
             conversationHistory.push({ role: 'user', content: question });
             const typingEl = showTyping();
             const bubble = typingEl.querySelector('.bubble');
-            const stream = streamTypewriter(bubble, typingEl);
+
+            // 清掉 typing dots
+            bubble.innerHTML = '';
 
             try {
                 const response = await fetch('/api/ai-chat', {
@@ -1050,24 +997,38 @@
                 const reader = response.body.getReader();
                 const decoder = new TextDecoder();
                 let fullText = '';
+                let leftover = '';
 
                 while (true) {
                     const { done, value } = await reader.read();
                     if (done) break;
-                    const chunk = decoder.decode(value, { stream: true });
-                    stream.append(chunk);
-                    // accumulate full text from visible bubble
-                    fullText = bubble.textContent || '';
+                    const chunk = leftover + decoder.decode(value, { stream: true });
+                    const lines = chunk.split('\n');
+                    // 最后一行可能不完整，留给下一次
+                    leftover = lines.pop();
+
+                    for (const line of lines) {
+                        if (!line.startsWith('data: ')) continue;
+                        const raw = line.slice(6).trim();
+                        if (!raw || raw === '[DONE]') continue;
+                        try {
+                            const json = JSON.parse(raw);
+                            const content = json.choices?.[0]?.delta?.content;
+                            if (content) {
+                                fullText += content;
+                                bubble.textContent = fullText;
+                                typingEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                            }
+                        } catch (e) { /* skip broken chunks */ }
+                    }
                 }
 
                 typingEl.classList.remove('typing-indicator');
-                stream.done();
-                conversationHistory.push({ role: 'assistant', content: fullText || bubble.textContent });
+                conversationHistory.push({ role: 'assistant', content: fullText || fallbackAnswer });
             } catch (error) {
                 console.error('AI Chat error:', error);
                 typingEl.classList.remove('typing-indicator');
-                // fallback to local answer
-                typingEl.querySelector('.bubble').textContent = fallbackAnswer;
+                bubble.textContent = fallbackAnswer;
             }
         }
 
