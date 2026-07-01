@@ -1,0 +1,741 @@
+{
+ "AomScriptType": 0,
+ "ViewFullImage": false,
+ "ViewImage": true,
+ "ArgsArr": [
+  {
+   "Variant_sPName": "",
+   "Variant_evtType": 3,
+   "Variant_Type": "String",
+   "Variant_Name": "Result",
+   "Variant_Value": "",
+   "Variant_FlowType": "",
+   "Variant_FlowState": "",
+   "Variant_DisplayName": "Result"
+  },{
+   "Variant_sPName": "",
+   "Variant_evtType": 0,
+   "Variant_Type": "Boolean",
+   "Variant_Name": "variable2",
+   "Variant_Value": "",
+   "Variant_FlowType": "",
+   "Variant_FlowState": "",
+   "Variant_DisplayName": "Bool_元素判断"
+  }],
+ "RichLog": false,
+ "Guide": [
+  {
+   "id": "19A628F0",
+   "type": 1,
+   "args": [
+    {
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "AssignValue"
+    },{
+     "paramValue": "Result",
+     "paramType": "String",
+     "paramName": "AssignName"
+    },{
+     "paramValue": "Variable",
+     "paramType": "String",
+     "paramName": "AssignName[T]"
+    },{
+     "paramValue": "Expression",
+     "paramType": "String",
+     "paramName": "AssignValue[T]"
+    },{
+     "paramValue": "Result",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    }],
+   "Text": "Result",
+   "Note": false
+  },{
+   "funcname": "RPAUIAutomationOpenBrowserV5",
+   "id": "20447E70",
+   "type": 4,
+   "args": [
+    {
+     "paramValue": "7",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Level"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Desc"
+    },{
+     "paramValue": "True",
+     "paramType": "String",
+     "paramName": "Propertie.NewSession"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Hidden"
+    },{
+     "paramValue": "2",
+     "paramType": "String",
+     "paramName": "Propertie.BrowserType"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError"
+    },{
+     "paramValue": "https:\/\/www.bankofchina.com\/sourcedb\/whpj\/",
+     "paramType": "String",
+     "paramName": "Propertie.Url"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.UiBrowser"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.ShowMode"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Result"
+    },{
+     "paramValue": "打开浏览器",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Arguments"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie._Private"
+    },{
+     "paramValue": "正常=0,离线=1,未知=2,提示=3,警告=4,次要=5,主要=6,严重=7",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Level[Enum]"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Data"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Identify"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.TimeoutMS"
+    }],
+   "Text": "打开浏览器",
+   "Note": false,
+   "Expanded": true
+  },{
+   "pid": "20447E70",
+   "funcname": "RPAUIAutomationElementExists",
+   "Image": "iVBORw0KGgoAAAANSUhEUgAAAOEAAABDCAIAAADlBfXIAAAx3UlEQVR42u19B1gU1\/s1vffeO0gH
+QVAQLIgKKlJFioiosUWNLRpN0USjJmLsXewKInYREVAUBEV67733svQFv7OsrssKC4j+4v8Lb\/L4
+LDN37p1y7nnPuTNzh\/Hdu3cMYzEW33AwjmF0LL7xGMPoWHzrMYbRsfjWYwyjY\/Gtx5fEaFdTc0t+
+UUNaFv5tKShuSM9ur6wesCSnmAinmCivsryQjoagrqaQtjoLN9e\/fSo+Rl1NTXFxkaKyMg8PLwsL
+y9drqLOzs6G+rjA\/v6qysrqqipmZWVZeXktHV0xc\/Ku2+z+LvJzslKQkQkuLkYmJopIyGxvbZ1Qy
+Woy+6+npam5pysytfhPflJ3XXlXb3UIgtrX3tLV3Ewg9nV0DbsXMxsbEzsbCxcnKx8PGx8shKsyn
+rCCsry2kp8UpLvrvntaigoKwp8GhT4IkpaUWuLpr6ery8vJ9wfp7e3vb2lpjoqMT42KBzuaW5ne9
+7wSFhMpKSlpaWrh5uKVlZN09vTS1tXn5RtVuTw+xs+\/8s7OzA\/3\/49OIw6yurLx+5VLUy5dEYrea
+uvrWX3aKiol9RlWfj9Geru620vL61EwQJ6GguCkrt62qpqe94zOqYmJl5RQX4VWS5x+nIqCuKqSr
+yS0t8W8xa1jwk+uXL0W+COfm5p5iYeHstsjYxJSVlfWLVF5ZXp6anJSSnAREdnd3c3FzCwkJCwgK
+CAgKNTU11lRVFeTlJcbHmU2d6uqxREdfn4OD47PbKi4sDH8W2lBfbzFzlrKqKhcXN53C2BmQOg8P
+zxc5zJ6ensaGBt8rlwMf3M\/Py2V4905YRGTn3n3Gk0zRG0da2+dgtJdIbK+obs4rrI1Lqo6OrU\/J
+6Ono\/CLHxszJwSsvKzHVBJwqoK7CJS3JzP452WE0cePK5cvnzyFJMfQxkKOLq7O7u7qG1uiTb0F+
+XnRk5JuoVy3Nzcjpmto6IEt5BUU+fn5yAeApLuYNuCc1Kcl9iZetoxPy4+e1BYiEh4WeOHyouqrS
+3XMJqhqnoTlY4c7ODjB6Tna2uoamjJzcaDoGOerral88e3bsoHdZaQnwiiXI8vbOCz28lqprao20
+thFjFHBsq6gqDgwtuhdEKCzp7e4e5fEMGDzyMrJzZsjbzeGRl2ZmZ2dkYvoarQwYVy\/4XDp\/rqgg
+n\/yniKiotY3N6vUbkacYGRk\/r06cZGgyn9OnnoU8FZMQX7dpCxAzIBTa29qyszK3bVgvKCi0cJHH
+fAdHppEfO\/Js9KvIm9evPr5\/H3\/KyMqu3bjZydVtwMKtra3FhQWB9+8HPrjnsGDhAjc3CUmp0ZxA
+8DFkzG\/bfiwpLu7qei\/2IDbU1DW279xlaj5lpBWODKPQlzUxCZlnr9QlphJb29\/1dZGvEYzMzKw8
+3AIaqqqLnSWnmrDwcI++zmHGgb17zp880fPh0AARaCknF7dFXks\/m0pR27kTx4ODApFzvb5bCYAO
+WtW7dwDNtYsX7t8JMDEzX7Nhk7Cw8Eibq6+ru3D2NFJtU2Mj\/uTm4dn003bPZd8NWBhQvn\/7dmpS
+Ih+\/wNqNm2Zaz0FeHs0JTIh9e+PqlQe3A9BVqNGFQz506oz1PJuRVjgCjLZX1RQHhpQ8DGnKye8m
+tDLQ3ZCNnw+WCJjurG\/o1x4TE3iRU1Kss76xq7GJ3p4xMbJwcfHIyUjNMJOzteJXVRrNiRt+\/LX7
+93MnT1AvgXcxmmRy7Oz5woL8suLiluYWyip1bS1FJSU2NnY6FQJz6akpqBZuDNJ28bLlE01MKWtx
+ITs62hneOxsScAHojLS0\/X\/sgiD2WrFy0mSzkR7CLd8bAX43UhIBO\/5pMyy19fQnmU5WUVOjLkMk
+EivKyy6fO5uUmMDDw9vR0dFKIJy6cElMXJz1s9w3OXCMd2\/5+127UltT8+nao2fOzZlvO9I6h4XR
+3q5uqM\/S4GdlIS9h4aFHByzGzMHOJSkO38MjJ80pJgJTBcFaHhbRrww7G7eMlJKLHXxSW3kloaS8
+tbgUlQ+maIFUHgVZyammMlYWIoa6TF\/IuwwW3d1dB\/7cc+HMaeqFoFJxCQm3xUuA0eqqqvb2dsoq
+N0\/PWdZzODg46dRZV1cLH3bU2xsohNqDE1q3aTOSYElRMQHKtLk5JjoKxRSUlPQNDFXHjWNhYQWs
+t2\/aUFJcZOe4YMl3K4a\/\/0BeVWWF9949MdHRSNmW1tZoVFJKWktHR05egVIM6jMjLTUzI+1FWBi6
+Hz+\/QEVFeUd7+1+Hj352rgCQoKfv3b714A5YOWnAMl8Lo7DqLYUlhbcDix89hRIdoApmZjZ+XiAP
+0IQrFzbU5VdTZhPgayutyPO7l3HqEnVhuHUhHQ2jfT\/DxXfU1jfn5Ddl59UlpKIJQBZLBtQP7EIC
+UhbmSi62IuN10BzD5+rCIaO2pvrwgb\/8rl6lWQ45xQ9nw8gIJ97b01NXV9fZ0QGe2\/rrbwtc3Qcb
+9svNziYSu3n5+ONj3\/qcOgnGBb6rqirX\/LChvq4+Kz29q6uzvaP9fkAACoPn5tjYzrO3V1JWwZ87
+t2+LfBE+ydTsT++Dw9\/\/tra25yHBJw4fBmbgk2zsHc+eONre1m5oPHHylKnSMjIoU1Nd\/STw4dPH
+j+tqawyMjMHr2JOkhARZOTnomc8bpQKKcCwhQUHXLl1Mio\/r\/sSloJ+LionvOeA93XImzSpkEmJ3
+d1NTE4icoS9r0YiNITCK69GSV1R093HWRd8BxpUYGcGLHCJCQnra8vNnCRvogj4pK+Go6GOUcnzd
+7R21b+JLn4ZXvYppr67t7ex810u7V2wC\/OKmRrpbv+eWkfx6bAp2OX3saOD9ezTLceVw7nTHG2ho
+ajU21D8PDcGV1tTRWbdxs6WV9YBVgSmPHTwAULp6eHJycUH2KSgq5mRlBfj5CggKVlZUgLcUlZUl
+paQiX7wgbzLBeKLrYk9gC79hye\/635SSkT5\/9QaS73DsGi52XW0tSPTtm9czZs2GnQcl286ybGpq
+NDQydnZf5LjQBcWCHj4AkuLfvoXOPnr2vISEBP4syM+zX+BsYDjh8+wp+kZRYf7On7ZlpKZS5xlK
+sHNwzLd3QH\/Q0NKmLITAgEckEFoaGxqyMjOKCwp5eHj0DAwmmk6m3nYIjLbX1IE+k\/cfI43Gf1IS
+ABXS01J2dZCaYc7CycHEykLNcMPFaF8vfEckdjU21yen51zxr3mbSGxto90VRkawqdhEQ4NdW77e
+OP9gGEXPBsfMs7MHvEKfBB36az8w+sOP2+bZ2SkoDiCUcUCZ6WmgZGERUZhZbm4euN3mpqbbN\/3O
+HDuC30j69bW1BsbGuvrjj3ofIG81ZbqF5\/IVUy0s8BuC0v\/6dWIPceeevbiubOzsQ+076ZKj0dVe
+nhNNJi90XzRx8uTy0lIyRnX09MD3bp5LUOzH9WtJwwti4nD6HkuXgen\/2v0H9u33fX9RRsFGFBBI
+aSnJe3ftzExPB+Y+RRR6uIiY2InzF9Q1tahHM2LfvA4NfhIV8bKkuBgqHH1snq0dtA3N+BQ9jHY1
+tRTeeZTne7cpK+\/TtQAKNKKMtQW\/mhK7kOCnHX34GH1\/XXt6YMVayyornkUW3X8CDUBTgJGFmV2A
+X2Wxs7ytFa+C7GecTfKF7O3twVljZx9g6Cc4MPDaRZ\/oV5HUCyWlpS1mzlq+ao2EpGRCfNytG9ef
+PQ1WUlX96dedWrp6Aw4h4awG+N64f+c2wLFlxy\/kBPr4wX2w6etXr3A9ODk51bW0IDfVNDSO\/3Ow
+srycX0DAev58O6cFgoKkUe6Xz59dv3yxuLBw5br1M63mQFcMeWj5uTn+N64HPXr4445fAHck36iI
+iNPHjsyZbweGht5FEwmxsQf27k5PSQGzrt20GYwF+fjk0UOs3frLb8jIIx1fI7fid\/VyVGQkMgNw
+Rr2Wl5d3nKam0UQTbT09UzPz0pLittZWHH56Wir2BIK7urISihwiGAlKSlZ2xsxZ2HOu\/gdLD6Ml
+j0Pzbtytjo6lMUlMbGz8qoqyc2ZITDEBQJkHGfIdKUYpV7e1qLTiZXTpk2c1MYk046\/IRHyqipqr
+vSSnmyL7j+hskiM25nVOVragkOB0y1nsH8gJZw1EEvky\/GngY2hH2A7qTcCU8x0dV6\/fUFxUCOQF
+Pw7EhYTvmWphOdhdExzFgT93J8bH4YyvWvcDeSFSMMCRnZV575Y\/lADA57TQFcScEBfb1NgIPQBJ
+qqyiSi4MRrx8\/tzb16\/B344uLkPej4Vbeh0VefTAAeiH5avXqI5Thx+Dy87NydY3NJSSloForq+v
+u3Tu7F1\/\/4b6OksrqxXfr0tJSkLqx7az5sxZvHT5SE8mAArRfP\/27cjw5xCUHxHCxITkrqmtM9HE
+REdPX0FJGaazubnp5vVr0Oh9t0krWFjZxMTFZWTlRMVEwRcgApxM\/ImSNK0MjFGAsq2sMuWf05Uv
+ozvrG\/uBjIuTV1FO0Wme7NyZ9HPu52GUHJ0NjRXPX+XfvF8bmwRNTCMzwKNKC23FJhkyjlzg+129
+8iTwEcjPY9kyA0MjDk5OQksLOnTc25hHd+9mZaQT+pQ7deAC44p+v2HjvYBb+L++rm7qDMsdu37n
+4uJiYhp4B9719q5dsRw1z7W1c3Zzf39CCASYg\/TUlO+XL4U\/AI05LnQl+5j3l7yzE3Ahs0h9Xa3P
+6VNBDx+6eCx29Vg85L17CNyQJ0FQCD9s2WpobAyr\/mmZirKyzeu+R15GHzOeNMl8usXNa9cKC\/JN
+JptBByNXjOhMAjkJcW+vXvB5+fw5eSCWHOgMEpJSRpMmGZuYmpiZS0lLM\/R1IXipg\/v2JiXEQzih
+N8LDjdPUUlFVQ3ai39AAGCWJw2ZC7vXbeX53CUWl\/UrD3qoqytvPUfNyYR5KIY0Gowx9T1FVRcdC
+CreWVtCwKRs\/n5KLnfp3izhERzy+ja5868a1gvx8PQPDdZs3S0pKF+TlgUvuBfhD7A\/YY9G\/9Q0n
+OLu6nThyCMw0abLZyu\/XQdrTSYugCrvZM2Xl5V0XLTabNo2yHNcSbL1j8yboNi0dHScXNzA0mSOB
+2orycrgIbV09cmEoY\/QoGB3P5d\/RV4po7sWzsLDgJ1DtUCBMzEzw8hAY2IqxL8hl8nJyFsybA48C
+dQuxgQyL\/gbOc1u8xM3TE9Q7ojOJ5LNrx7ZnT59WVVZSLyeNeVnN3rz9Z6hwyk0yEkYT4s+dOF5R
+XmY0yQSSRk1dg3o8hOzuu\/qiu7ubmk0HwChItKWw5NWKLYTiMhpwABNy82fr\/7SO5KyHEi6jxCh2
+rLOuoSI8KvnACdpn\/BgZRY3Hq7g7glBHdFoR928H4MLHxrxBMlIbN05DWycvJzspIQEnaDDZA1sN
+OYh\/YT\/1xhuAF2G96Y\/RkDE6fsIEl0Ue1E4WSPI5fTI6MhJtoQaIQpdFiwFTrIIVexn+nIeHd+sv
+v5ILA6PnT54wMjHZ\/dcBEVF6Kau9ve3cyROJcXGr1\/+A7vQy\/Fns69dCwsJgRwCFjFGkfuicH1at
+hCLsO4WM5JMsIiKy6acd8E8jvekKjC5ysk+Kj6fc8CSHqfkU6BMTMzNqjJLLwx5B0ujo6rGwslJr
+X5LAayWUFhdnZ2ZmZ2ZAth4+dfbj1f70woC34OUzTl7saiZQJ1kQJ9hL1WMBFOFwjmGUGGXo6y1Q
+Gtk+N6CM0WH64YaXR2LKpAm7t0GVjijjv34Veen8OQACJwiJHuADfQKgMrKyji6ur6NepSUn19XW
+Um+CkuRzDeShjLvnEmgsOk3AOuTl5mxcs2q65cyF7h5KKirk5XW1NfA0Z08cB1zwp5SMDCcHJ\/5F
+0gdVnz1+LDMj3XzatM0\/\/Uwuf8v3xvXLpBs\/e73\/oY\/RiPDncHvMLMyLlnihB8bHxlZXV8nKyjm5
+utrYO5JlNwgsJCjo7z27QdVojo+PD3QF5obeQEeCZh3+OXx\/dXp77\/jfhH1MSkyoqvio4OHMwIKC
+QsI29g5Tpk+HUqKsguhHz+T+8HQV\/iwsKEhNTkTvKi0paWsltCFa2zo7O96mZX48\/zQYfUfsqXmb
+kPz3ifqU9N7uflZJwnySqqez5PTJTP1vRZD9eHNuAZFAGjAC9ZKG+t+966hrqI1Lqox4Q12YmYMd
+llzNy5VLUpyykImdjUtKHCTNwvnJDZvedw3oWicvl4e\/6m7ppxQF1FV0Nq8WN5sIiTz8M1tWWnLq
+6BFcSMoSpDwtXV1ovkmmZudOnUDywuUcbHMbO3s3zyXIVnSaAAShbv\/4ZcfsOXOBUVhm8nLIQf8b
+19BDeojEiZMnd7R3QDkg3yGV11RXPQsJkVNQ8Fy2nDI6CMftd+0qDy8vfYziih458DdUBDZUVlXb
+sHoFCAn4k1dUtF\/gvHzVGo6+s5qfl3vn5s2LZ0\/3vns3ecoUAQHBmNfROPZ5dvZzbGzVNTUZRhhA
+DkRwYX4ehBNyEWRuWnIKGP39NWVigpd39\/SCa6R5bBQyHcYRXFBUWFBeVlZdVQmwkh9TBPcLCgpx
+8fBs3LqNUp4Wo+3VtcWPQkgDol0fB0QZmZlAV9o\/rJCeNZUaW4iuxubG7NzGtOyGtEwyhnq7ultL
+ylEtfnQ1t9DclCfdlOLjFSQ9eP8RWGBobjlpgXEqAppqfMoKn56OfN97EMd1ianUCzlEhKUszHR\/
+WsshPIJHEjs7Oy+dO3Px7BnKDWXkHcvZVnv+9gYB7N2188mjh4NhFFfUboEz0IyMT6cJkuh8EX7g
+zz3WNjbUGAWP3rsdcNf\/pryC4uy5NiFPHke9fMHOwQm6TUqIExIWmT137oxZs0HbwiKiaOv2Tb8b
+ly8Ji4rSwSiwCM4+dtBbddw4R2cX0ND6lcuLi4oEBAQMjIzn2drNmG1Fln2w8BfOnMLRAbsTTUwh
+dcBeyLw4aoeFC82mTPvsu6CgvozUtPOnTkS\/igT+qFetWv+Dk4srZQgZvbe4qDA1OTk+9m1C7Fto
+J1FRMWVVVSQTOHoxCQmgGY6Kh5dPiGrAhBaj1dGxudfvFD8M7ndtODlAVyAtAQ1V6uU9HZ01sUk5
+l\/zKn0eCgD\/vCCmB7C8711JtyUJ2QQGa9N1aXJZzLQANUT\/YjzKg3unXTvAoyjGN5PyGh4Vev3Tx
+eWgIZQls0LZfd6qoqv6154+QoMc0JoChb8yLg50dJ3HVuh\/mOzgMOLZKCRiRp48DYbAAEWqMVlVV
+YnlcTAwcAwCBpB8dGQEBigLAlteKlfoGBriKhNZWYIiLiwuWGf9raGv\/tmfvgM8ikR\/58716OTcn
+B0CfZWVdWlr669YtKYkJhkYTbRwcdPT10R\/I0hlacP\/u37PS063n2cCWIOPD3JSWFmdnZKxYuw4C
+hnJQHR0d4GYQ4XBeQAAX1dfVR0e+RPfGgRM\/DFOip4EU123egmTCxy+AOtsIBGjN4MeB6MDd3URC
+S7OAkBDyEvS9At3HZGkxmnvtduaZK4TifnYeUJjw53bRiQbs\/YckG1Iy8m\/ez71x+11PL8Pog5GR
+S0JM3s5q3DJ3WsP+7h3YPf3EhcaMHOrFrNxc+r9uBptyio\/gcbKSoqK7Af6UuzsMpNtIopMmTwZK
+Th05HBMd1dKfDBBwwXBXC1zdkCWpBdaAUV1ZiRzte\/WKnZMTNUavXbqQmZYmKiaOcw6tifwOpILF
+e3t61vywca6tHTg+Mz2Nl5+fjNEzx4\/evH5todsiV09PPr4BfD0AAXux+fvVyNeWs62R08Ofhe7b
+tbO5qdnDy0tHfzxw+fv+v8nj\/89Cnv627cfqqip10u3chsqKcsAIezJOQ3PNho3Uj8zBgGdlZnBy
+cqGPDTmkD6wHPXxw5vixvJwcaiyBvNds2DTPzg7nFjuZmpQUHhqKdAH1jx1Axgi8fy8nM9Ns2jSv
+FavGG06ghwvqeruamjNOXc6+cIOarpjZ2fjVlCef8eYUF2Vi6UdvuVduZV\/0a84vHD4+6AcTKyvQ
+afz3r8LjdVj7PzPakJ5dEPAQ\/ol6IfZN3s5azctFQENt+K10dXYiKx3x\/js9JYXc7wEV5BcofVw5
+MFPPJ8+1AFgr160DV0lJS7OyDvHoGmgYetfv2pXlq9c4uy3i5ePDSY6NeeNz+lRiXCwrGxv+rK2u
+VlEbB2Ha0NhgNmXqiu\/XKSgqwtdDyCI5yskrsLKyonyAn699n7r4dHwUWT43J\/vR3btRES82btuO
+zB739s2BPbv7HmQhwmlxcXEjofvevU8etwKSNq1d093VZTLZDHsIUkfemGfnoKuvDxUrICgIDwQ1
+CXUB4whpON\/B0WzqNPoYRXkIkvu3A9JTUzs7Pj7OAQY1nzaddFBKSsha1y74wJyhKjgzEzNz7b6b
+cyD1t9HRoIalq1aPAKMQfFnnrxc\/fEpdgltaEilYe+NKGmtCJLSmHD4LmPZ0fpkXRd7vEDOzzuZV
+cvNm8cj3oyuI3YrwqDebd\/UXysx8yvLjd26RMJs4olYg9sPDQnxOnSwrK+saxv5Dw525dFVWXp59
+GPfNKRhdv2UrqBcdAKA\/8OduaEG4V\/wJwOno6ZNvbcPk4oJt2PoTGztb0IMHsB879+zlJN0dYDp3
+8sQt3+tOLm4DYhQeBRWGh4WNnzDBY+kyoOrxw\/t7d\/5GeeYIQhN8\/PfR4zw8PA319Q\/uBOz+9Rcs
+d1\/ihaPAbhhMMNLU0UH3Y+h74CsjLQ0aMSoiAoc5bYYl9A\/90XVg+ub1qzB2aSkp5PEsckBTol2P
+Zcs1tXWQfx7evYOjkJSShohX09BQVFKGbiEQCD9v2RQdEWE6Zcry1d9r6+rSgwQ1RovuBiFx18Qk
+UJcQNtDR3rBS3HQCzdNGMEaph8+C20YEjiEDyk9u\/mxQo7C+Ns2q+qT0N1t2thSWwI19KE16xdT4
+wE4ZawvmkTyZC9DU19fduekX\/\/ZtTlZWVWUFMIFrlpaagjxIUxhpC8b\/2q077MN70YeC0R+AUTc3
+ZmYWEJuHk0NqSjIfHx+0l5y8HCMTM66rvIKCtIzsm+goJRXVtlZCTU2NlJT0hj5Li03OnjgW4Os7
+2H2mxw\/uXzp3tiA\/b\/+hIxMmTuxs73hw987+P3ZRCggKCeno6c20ngPdCay8iYo69o83ls+aMxco
+gXhQVH6vAonE7ppqEkZj37wGu0MgAqNgVjrH2EogoJMc3PcntoKYpizHVmBKB+eFlGfwUAwCRllF
+DcKa0sMpGDWfDrpdS+ddKwYajGacvlx4+1FTdv7H1cxMUhbmRvt\/Jj010n+MtzE9O\/3kRRrShUNn
+F+Rn5edjZBrWownE9g5CYUm\/HWJiFDU20Fq\/XHyyMU3hloJiaOXiwJDu5n6DUAY7t0DFYg+H0yJN
+JMTGhj0NRpZEyxu3btv3+66UpESaMvDUUy1m7P7be5ivh1Mw6urh6ey+CGwEwK309KitqdHS0TGc
+OBECEfSDbDjNwhKUCed02ed8TlamvoGhm+cSZFg01NLSfP7kiUf37g2G0SeBj25eu9rYUO9z3VdI
+mMRMoU+Cdv60ta2PnqEm8R9+oMsZm5paWM5samw8eeQwuuK7vuh31ZiZsRtwbxDEm37abjFzprgE
+PQZF5oFgPXbQO+Z1NI2RV1FTI72l6OoOFqdTA7aC8ECXAJRHhtH4nQeAgI6aOsoSNj5e2XmzjPbt
++HTLATEqoK6i5Gqv7GrPxDwso12fkh5it6TfDjEyHpcdwXjn\/x\/h5+t71Ptv0pMAFjMAKUUlpaKC
+AtAkMu9gGIX7yc\/Lha61tLIivwiQGB936O\/9MdHREJ3jJxgZTJiAvA\/XBT+kradfkJvre\/UyFzc3
+NAaN4AaeoIbBoBAeMI4ysnL0ZSjafXjnzvFDBz+9AYQNIS6xz6BSOjWgw9jOtiwtLrZ1dBoZRl+t
+2loW8oL6KScuKQkFe2vdrWs\/3XJgjGqoqrg5KLs5MrIM695PfVLa0\/mLaQ7yP4hRHVXllOQkJFAV
+VTWYJPh0yA9gFE4LzgMumJub9s13JOiOjg5iNxGWCOxYkJcHeXr1og\/YGkpxxuzZUBHPQ0IUlZXm
+2dpnpKcFPw5saWqePXeeobFxc1MTUkfs69cNDQ3ku7KQMRAAxiamwJaGltaAwwiUyM\/NedCHUcoS
+6ArQv5aOLpxZTnaW6rhxAJ+tg9NgbNrY2GA3yxLqfM5822WrVtMfb+6H0ZdLN9C8fiSkq6m00E5l
+keMAzXxljEZERAynhv8PwtzcvLWmkmw7cJk3b\/8ZNig1OenqBZ\/C\/Pwfd\/xsNMmEg5Nev83PzYVh
+Cg8NBT+JiotnZ2aAdyUlpdjY2a1tbOD0oyMjc7OzeHh5XRYttnNagNrKS0vycnISE+KjXr6srq7q
+IRIhMABrOHEZWVlZeQWoVfyWkpb51CYC4lERL7es+x7aAPiBoQT9z7W1g6Q5deRw5ItwLi4uVXX1
+I6fPoaoBd5iCUQieRV5LZ8yaTefohsCouKmRiruj7LyZAzQzhtEvFMCouoIcfgBS6hqaMOmQkrd8
+b9y+6cfKwrr34CGAYLCJUrq6uhLjYiNehL968aKmugrAYmVlS0lMfMfwTltXz9R8Snd3F9wV+e4o
+RCcw6uLhgWzO0Hd\/KCE27tTRQ+Tn5zs\/jG8AYWISEkrKKqhNWVVNVk5OTkGR+hlCRHFR0YlD\/+Rk
+Z3Z3dRtNmgTuR+9Cv\/pn\/z5gFAXQ1rWAO5p9z9P09PbSPAkOlC9xdc5KT1dT13BydXX39KJzfsYw
++u8HMLp+zSp2dg5kbTFxcVBXeXnpycOH3r5+bWBkdPD4ScjNwR5KAiHt3fXb68hILi5uNQ11QUGh
+4KDHYNNx6hoAqKS0FIgNCZeRkamhvg46dYHbInfPJVIyMtAJ9bW1Bfl56AyN9fVd3V2VFRUN9fXt
+be29vR\/VKpK4rv54a5v5s+fMpdbEQHxdXd3LZ2GdnR2aWjrQDxAY1BgFKA+fOmNkYgIQ11RXA7IC
+AgLQu+hsZCe3dcP6uJg3AoKCNvYOG7f+ROf8jGH03w9gtLmyTE1dXVtPT1VNHUj1u3o5PSVFQkra
+wdl5+erv6WxLxij80Dx7B3gjZPmft2xubm6Gv0buBsphkn7+\/Y+qispH9+\/CZtnY2S9duVpCSjIj
+LQ2a8uHd27A4i5cth2t5+zra9+qVlKREGqsOtBmbTl60xIv+Q9CDYTQvOwdEnpuTbePgONl8ioSk
+JLpHfl7eCg\/3yopyEVFRq7nzdu37i07NYxj99wMYrSnMA6QgE+Fd4GAa6uoBsvmOjvNsSfcS6WwL
+h44rjTQNiKQlJ587dSI\/J4cFZMXCyszCLCIiunzN9yZmZlh18\/r1iPDnEpISM63nILNnpqc11Dfo
+GYx38fBERkbTra0EtNvQUF9ZXl5WWgI7JSQsLCQkDNIFsPCD\/rsAAFJeTvahv\/Y\/Dw3BXgkICV25
+GaCiptrZ0VlaUvwmKuox6aWUbhFRMWgJ7HNifHxnRwcLC8u0GZanL12hU\/MYRv\/9AEYNtTUT4+OQ
+bYnd3QDY5KlTZ8+ZZzLZTEZObpiVpKem3PG\/ef3SRWRhZFVFFRUdfX2DCUYTTSYjnxYV5D+4cxtr
+29tJj5L09PaArSeZms2aMwcunoeHl1IPfE8rgTQ3RXtHO2mQlZMTTms4d9cQzc1NINHgwEcpSUmA
+9YGjJ8gqFljEocXHvg28fzc7M6uj751lylsPU6ZbXLjhR6faMV8\/6qjw99rBsPeis+TnVgCMHti\/
+L+Z1NFJzVWWFuqYWPPIE44kjmncpNSkJKfV5WIi4hKSSioqmto6Wrq6SsjIbGztOKTCXmpL09PFj
+2CMoSDFxCX0DQ5jxcRoanzHnGZ2A9khOSEhNTgRfWs2zoYxh9U0S0fU0KPDhnTs0I\/8jw+g3NT46
+AowCJc5B1v4DwoS07ljukFXM8I7Y1XfL\/80u89Oa76vC7y1hgxelaXvg0jTFBwpgFAfb1NQE65OT
+nTVj1iy46ZFOeQytmZGakpWZqa2rC4v96cAkCLKxoT425g2hhQDPDi3xeW\/TDxnd3V1EIunl7E9X
+oXuEBQdfu3QRbol8HwH7MNNqzl+Hj9Cp8Nu9z\/QFMZq+ii5MqIr0L02N14FrI+GSYUgQDhFkjI6m
+hv9DAUZ\/+fz5r9u2QFEAe\/BhcGz0J3z8Bu\/XMx2XIY2lfVGM+mueHoRNVdb572XY8R54\/ahwhrc3
+wxZ6GP0iAGX4j2EU3q6stBRJH0ljwsSJQKeSiir9GS4+\/7mn9uralIOn8v3uMXzRGAZGh5e+AT4S
+uj7lUUAryJo2XZOKyNEKS7q5\/mM1oxWk\/ymMMvS9rgNlUlFWKiElBWU85LTRn\/\/8aG9Xd9pxn5xL
+N7uamr\/gATAyMx+XJrlI+hjtB7tPefRjlh4+Rq2DdgUxhIW9ByUJ4vJnhsr1DMMSE0PEfw2jI41R
+PYdf8igk5+qtmrcJX+ZdkQ\/P4R9gIYH+y2J0ZdEg3AtWJK2jTuDUnmkojH7I93J0uP09ow8aYxil
+H6N6n6m9ugakm3b0fHdzy6ezMY58X96\/z7Q28BbDV+fRlUX+xc7OEz+pbyS+niw6BjTuI9GqYxil
+H6N6L5Q0LVRFVWXE64wTl9qrakb5\/QbKe6Ez7e0YvroeJZHne1xTcn1\/RFI8U\/+U\/0Eq9O0Fg4pK
+rvyqMYx+1Rjt+\/XAZUddQ0NKRkNqVmtpGWme\/A9BbG1vLS1vKSju194w3q\/HNWP4X+jRCv9dEea7
+nCXp8Wjfb4YPBfpwKe\/tv1JOsvjMB6Snj2H068YXmKeEHITiso7qGuCSsqStqroyPLo4MIS62HDm
+KRkKo5\/E0GNPYMSBxtdJobLO2zpoyxB69EPWp5WWgxqmMYx+ufgW53v6Chgd7hg+BZfmEV5n5FdR
+cv0WhnXrio592sYYRv8H8S3Om\/fFMTqCe6EfipMIEzglb\/p+5QAW6X+GUfL8yJSJGkcflDfvvuz9
++s\/bE\/KPwQ7tW5x\/9N\/kUfpDTwy0QKWpvV+HGPpG\/cfjHfJgKyvKW1tbubi4JKWkh3ta6AahpaWq
+ijRlkLS0DP0XUb529PQQ29ra2tva+fn5B3w7\/Fucx3nEGP0\/Hjjeo4f+UR2nzsPLS72cSCSWlZa8
+CAtLTUnm4ODo6uwEsLi4uQ2MjEzMzKVlZAgthOTEhGchT5ubmtjZ2fn4+Xn6ZmiqKCvVG28wdcaM
+Ab+qmBgfF\/82pqa6mpuHBxsC+uISEkCquKSkqfmUgry86MiIjLTUrq4uMXHx+Y5OCgqKKJOWkvw8
+5GlTUxP2xNB44rQZlkBO0MMHWZkZLc3NQsLC0yxnGhoZ55HenYrAQlTusshDUVkF\/Yqh752WewH+
+aSkpPT09mlraVjbzBQQEyBReXVUVFfGyvKzMau48yjyY1DGq+fAlLcz41ZQHmw\/ss+fDnzKF9ITB
+fwqjZ06dlFdUor5t3d3dDaC8evkiOzNTQFBASloW6b60pBgYAnZnzJptMXOmmLgEytwLCAh\/Fopt
+jSZO0tEfz9A3aQAuNsqojhtH3RBQnpuTfcv3RltbK5AnK68A0JeWllRVVLS3t8srKGzatr28vOzh
+3TuPHzwAc1taWS1ZvlJJWRlrgVFs+PL5M0lJKYeFLo4urrhSkS\/Cr5w\/l5KUqKWju2PX7xraOiVF
+hXdv3QIcQY029vbzHZy0dXTRr3A4gLjf9Ws9RCKqtXVwQockYzQ9NeXYQW8c2sZt2ydPmfrps6qj
++q4ItKnsXEvQKjs\/H8PovyvS20tsa4cInr9yGcN\/DKMvXryg0YXlZaUBfr4R4c\/Npk51WbRYRFQM
+GEV2fvMq8vg\/BwWFhV1IX7x1goaLffPae9+f3Nw8rh6L58y3RTHQJHBMfr2TUiGW19bUnDt1Ijw0
+1NbB0XXxYvIT\/o2NjeGhISFPgrq7uk76XGRhZQ0PC\/W7eiUjLW3Ljp\/Np00nT1jS1NiInUFD49Q1
+0NC0D9OQ\/LTxh5Cgx+bTLQ6fOkNeEvY0+NK5s7nZWYCpndOC+fYOQDBZTpw\/dbKzs3PGrFmUr9u0
+tbYC6Lt\/\/Rlsun7Lj8Dup491j\/b7TCKG+qpLFoqbGDJzjPb7TABoQ3p25unLv+STZgr5T2H004N9
+dO+e37UryIyHTp4WFROjTG3e1NS486dtSI4zraxXrF0HeZqanLR312\/s7BwL3RZZ2dg0NzXW1dYC
+ssKiotQPcQIcIF3PhQsUlZRXrVtvRTVRXkdHR9CjB3f9\/X2u+7J+wGh2Vubv+\/7S1R9Pnna5tZWQ
+nBC\/a8d2FVU1GoxGhIfPtLbetXc\/eUlCXOyz4OCammqIkI72DmsbG6+Vq4BsdKeghw9bCS3aenoU
+jGLnnzx6CJSXFBfrGxp6eC3DjtGYp9F\/544dZl9IT1PeZrTfuSsLeVEV9batsvqoKIlR\/uMYPXnk
+MPk7dxdu3KSeex\/S8KrP+Vt+N5SUVTyWLps02YyMUWI3EUCBIoQ84ODkMjU31yd9VeIjN1eUlT0N
+enzgzz02Dg4L3RfpG3ycXJw8I3NZSbGBkTHonIxRKN3FS5fr6OuTMdrY0PAiLDTwwf3xhhOGxGh8
+TIysgsKzp8FRERHt7W1TLCz+2P83JydXcGAgDUb9r197HRVp6+R8YM8fDfX17ku8lq5cRfP91W\/i
+e6Ggz+a8wtbiMvL3Qk\/IkVT2fxyjR7wP3LvlL6+oeMnPn3o56BAketT7AA8Pj6vnEsvZVmSMFhcW
+qqmrw3ilJSdpauvOtbUzmjSJesO8nJzbN30vnT+3fPUapFRl1X63tbtJ3\/ToJM+GQsbo61evDI2N
+JhhP4uXjI31QoW8O0dzsbPiqITGaGBenqU16j+\/RvbvPQ0NQ+dz5touWLgu8d5dI7JluaUnGKLrN
+bX+\/spKSzdt\/PnPsaEhwEHqO5\/LvaKZ6\/Aa+u1xSSiguJ7a2Uh6eGsMowweMysrLn7t6nY3qe6HA
+KAQcTIaIqCh4FAafjNH6urqJJqZw3KBDXFYgiQajJLd048bViz4Qso4LXbV0dAbbHzJGATWoSYMJ
+xnz8fKRP8VZUwK0\/Hh6PAqMgS21dveyMjMAH916EkV7Dd3J1y8nMlJaVm+\/gQMZo0KOHD24HQBVM
+mW6RnJAA5sZBOTgvpHld+1v8fv0YRhn67MXtm348vDx\/ev8DBUmZpwRGBPnx5vWregaGy1auBtGS
+MYr8COhAzMHcwGhDp4JWqSssKy0NDnz0z\/69egYGXitI3zyhlhCotqW5WUxcHJ2BjNGcrKw9B7x1
+9MfzkPUogYBqf9m6RVlFdfgYhSAG8qB07wb48\/Pzo8WpFjMWLvIYp6HZ3tZ26O\/9SfHxoFvynpQU
+F2EfjCaZ\/Lp7D\/XEfSPAKAKYq4lJyDx7pS4xldjaPuB3vEcf\/0GMvnz5ksYohD554nv1cn5urv0C
+Z\/AlzDUKwJvX19WCRGNjYuba2nqtWMnMzJKSmLjv950cHBwuHovn2dkP1gq4MDU5ec1Sz67OzuVr
+1kKSgiDJc1J3dXXl5WTnZGdBA5D0aGgomsaff+z7S99wAnnUlkAgeabftm2FSKDB6Mvnzy2trKA4
+yUvi376NexsDngbjcvYNjqanpvzx83byTKXzbO1WrluvojYuKyP9+KGDGlra3635HlIVxXxOn7zj
+f5OBNIvvUrfFnpQ9HxlGGfq+0wBVWhwYWnQvCK5olM\/jDRhkjP6nIiQkhOaVCXiUyz7nrvich6kH
+RenokbxLZUX544cPfE6dnD5zFnIiQAB4xURH\/bN\/H4jW2X2Rk4vrYE3gQiNfe+\/7MyL8OdrSG29g
+Nm06JEHfR2lfFuTlKauqAbigtODHgb5XLudmZ61Yuw468v0QVUMD+BXMp66hSYNR0DOqOnb2PHkJ
+BCjyu6ysPGl2aWHSdw3QPUhz+f6+MzkxcfoMS2AU9H\/2+PHammrz6RYzrazJ\/TMlMeHiubPwfNp6
++j7XPk4qP2KMMvTdhWqvqIZChdysjo6tT8kAcL\/IpWLm5OCVl5WYaiKsry2grsIlLQn9+jUwgfx4
+5vjRsOCnDH1zdxkYGeFK4Kp0dXaZTpmioqYGcvI5c4qRgdFi1qz59o7kT2yh3z+4c7uooEBcQmK+
+g5OklFTEi\/CUPhWFJAuRh1yJYi0tLfGxb08fPTx5ytR5tvZSMjIwB9779ryJimJiZjaeZOLuuURT
+RzcxLjbAz\/d11Cu1ceows2iC\/MVlcvT09GRlZLx4FgYIMrMw45KzsLIgFcJ\/yCkomE+dBnvEzsGB
+DH7s4AFcVyKRCFO\/0N3DfPr0wd57hpYtyM29f+c2QFlbW8PPL4AOgN0jfYBGTdVwgrG0rCxkKzrG
+08DAtrZWNQ0NJxe3KdOnS8vIFhbk\/75jO\/I4Hz\/\/7DlzF7i5q6iqhT4J8jl9KikhXl5BEYi0sbfP
+zMi4F3Dr1YtwQSFh0nzQlpbYlvTJws6OhLi4axd80OJM6zkNDQ1njx\/F\/uAUzXdwJA8ywDbdveVf
+VFgA5qb3DbHhByxRW2l5fWpmQ1oWoaC4KSu3rapmgPGpYQT8E6e4CJw+\/JaAuqqQria3tAQL91dk
+U+AsNDioldCKw2fnYBcQEBQQEoLkAtqAGDZ2tpSkJMiv3p5e9HiAGKjFVk8fB+JStbe1g7TESJ9y
+E6osL6+tqWFjZ5eRlYXwJ7\/V3jffQWdYcDDKqKiq4ozD0IQGP6mrrQXohUSExxsaKamoIOemJCcB
+qcjg2FZJWYXmXmjfu2mVacnJ8NRcXKRbUMQeIoClo68vJSUNGQdc9tUc1FBXj999k4vrQwgONske
+OdJTUzPSUkHJxL5nLwEagB77Q\/5eSmlJSVzMm8L8fEYmRigBHdI4kaaIqBgOE\/0TBh9iAIiEBpCW
+kYl\/G5OellpfW4ecrqyiMtF0MjZH\/y8vK0X\/AeNq6eiSvyyFc4Le9fpVJChTRlYOPSQ+JgaHA1Oo
+pa0DCmfo+xplbnY2efq+H37c+gUwSg5I0q7mFpj96jfxTdl57VW13S0EYlt7T1t7N4FA\/V4UdTCz
+sTGxs8FUsfLxsPHxcogK8ykrgDuF9LToPwMwFv\/BGC1GqaOrqbklvwi0in9bCoob0rNpv0X7ITjF
+RDjFRHmV5YV0NAR1NYVIj+X\/5zToWAwzviRGx2Isvkb8P8FceD0OA9l\/AAAAAElFTkSuQmCC",
+   "id": "20A29920",
+   "type": 4,
+   "args": [
+    {
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Data"
+    },{
+     "paramValue": "7",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Level"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Desc"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Bottom"
+    },{
+     "paramValue": "'<html app=''chrome.exe'' title=''中国银行网站_金融市场_外汇牌价'' \/>
+<webctrl tag=''A'' aaname=''中国银行'' \/>
+'",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Selector"
+    },{
+     "paramValue": "TRect",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError"
+    },{
+     "paramValue": "1",
+     "paramType": "String",
+     "paramName": "Propertie.Target.WaitForReady"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Element"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Result"
+    },{
+     "paramValue": "Bool_元素判断",
+     "paramType": "String",
+     "paramName": "Propertie.Exists"
+    },{
+     "paramValue": "存在元素 'A '",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Right"
+    },{
+     "paramValue": "TTarget",
+     "paramType": "String",
+     "paramName": "Propertie.Target"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Top"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Left"
+    },{
+     "paramValue": "None=0,Interactive=1,Complete=2",
+     "paramType": "String",
+     "paramName": "Propertie.Target.WaitForReady[Enum]"
+    },{
+     "paramValue": "正常=0,离线=1,未知=2,提示=3,警告=4,次要=5,主要=6,严重=7",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Level[Enum]"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Target.TimeoutMS"
+    }],
+   "Text": "存在元素 'A '",
+   "Note": false
+  },{
+   "pid": "20447E70",
+   "id": "20448370",
+   "type": 5,
+   "args": [
+    {
+     "paramValue": "IF条件",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    },{
+     "paramValue": "Expression",
+     "paramType": "String",
+     "paramName": "Condition[T]"
+    },{
+     "paramValue": "Bool_元素判断 = True",
+     "paramType": "String",
+     "paramName": "Condition"
+    }],
+   "Text": "IF条件",
+   "Note": false,
+   "Expanded": true
+  },{
+   "pid": "20448370",
+   "funcname": "RPAProgrammingLogMessage",
+   "id": "20A25BE0",
+   "type": 4,
+   "args": [
+    {
+     "paramValue": "日志消息",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    },{
+     "paramValue": "4",
+     "paramType": "String",
+     "paramName": "Propertie.Level"
+    },{
+     "paramValue": "打开浏览器成功",
+     "paramType": "String",
+     "paramName": "Propertie._Message"
+    }],
+   "Text": "日志消息",
+   "Note": false
+  },{
+   "pid": "20448370",
+   "funcname": "RPAUIAutomationClickV3",
+   "Image": "iVBORw0KGgoAAAANSUhEUgAAALoAAAAYCAIAAADCuHBDAAALsElEQVR42u1aX2jb5hZXIBcUyECB
+XrAhhah0UJsFZtM8WCwPUcmFyrRQmxRq0cLmZLDZC6x2C3W0PmRKC63dC6m9QWr3wopcaLEDC1bg
+hjoPGfJDhj1IsQotVaEBCRaIoIboIZD76Y9t+V\/mjAbug8+T80n6dM75fud3\/ih9BwcHUE960p30
+9eDSk+6lB5eeHEF6cOnJEaQHl54cQXpw6ckRpAeXnhxBuoRLKfV1omD8tuDXKd8ZuPkWiV24LRJL
+fkdX7wUbstb5OcLS7uK+okAw3F9fUHYkZdCCwOoleUeBtZ8toigKDMPQscmhOldkGUKQQXBP0Wly
+gvA0nIIC1BW0jV77pewjBZtxWXRLt1lqSfZHfG1u\/SM1velMzphdK7H3maEvQ64Tf6lzgz51Z71K
+0w\/ykvGXK9DFwUmrC13ChSX73Gntl+NeuXjD1uaWNzH7p8XoAUN05XqwYdj5uhw63XpJKUWczjWy
+vDFnMxwnxEZPFe8cMBcOe4v8xD00qyQLL\/xnOr92LWz9ivkr3ZzURi4wciSdIeG+3Q3lyjd4so8h
+gXoVWaooEMRRqHfvsRib0O+CERPQlafegUVcLAR0+BVmh7BHRO5Phhhs2X2F7HtOHvxSN1peIdGL
+WSIrMpeQBt\/tSPK+eSEfsGa8YgI3r\/UjlhOqFsLDc6dm89qSL9fFwQEbjwiXiaSY97eNLu0gw3zT
+4tVczchGS4AZtK2QD9ZPxexKmb2GunmqXAjZ1MjrCi7gDfxdzH7PlhMYAoHaC\/D7TZRbD6KHGQsj
+JxCV21Qmk5UG1zfpXFe6CS62+\/ZTt3ctIPQrklRBLBYY2pclyWM6FdUoLrKXuaI9\/2rBbstjV4UM
+FBd+aVG\/CS4yS6JB6wN\/\/usMuVUM1cNDSBAYvdXgE2lbRoYtDYQ1SnFsQPOAlMKt0+vQMcEFDuT3
+4hMdbvkLdiktOIj4ToMZsMWC1DMOybyPmoJATl+nLbcJdpQEbCBvSwrwOQg71emKan\/dZrM04axF
+gN8jzrdbodqD7LW+8Ojb8o12+NECQKz7ullnoJXnVw3E7eCi\/YnWT7rRP\/Iyab2Ocq9pR79+\/F7o
+schcEGMuOzPJ5e+4DMTodFjFHPlYjI4VqEmMvaxyvMoxHoEq5UOfdcrBrMF2nQ52PTiAJ5RjgYtl
+rijSHTPcR0tGZlFkCcS3EJ\/A+IiYmISgd3HcxVOAXauM2iy\/U9axBfuS+GKmHQkeGS5mi5p0NnGe
+5kqsFEhcEqKXOewZjZWC3n93ZpcKO33SnbqgUe9OdnrUW5wtc7e03Cvng2PnMuMZfsmj4lJzgLCI
+Y28ocRGH94vUhJubquNJXg86\/5VxLHHMl6DmyYdPko25th27NERmibI6F6TjgIsps9SeP3WT7\/SM
+7V6HYzgcLjpCVKkzfXfJqKrSbQGGPJlORQCAy5otfTsr6PevpTjEQ44N1W5BL9Fz5y1\/Ay72tK26
+D2qDmdRgKj+LQmsB64oXnLQGdEHbTaPAJzJ0NbN7hcMuxpBbHDvvqicguUCdxxZ2\/Jn1pGdY9Uj6
+4gC5gicLnpQrCN2jrTeprMnN9LMAN0tbfxGSk3kzlyhvUuR4WLnD577UzAGVQD\/UyjcgYNxPjgEu
+pZbjF2qU2\/pAQ9S2R31jMoIM1Ov0a8RiCuvELrUKo0F4CrXnr3NkGkt42oG1GS67xSdZedyPjxjX
+yyspdMlAgAaXDPEsjBkXuehlBl1MeA3aEjOzQWipKRmhdc\/sqnApP8CmoSR33V6DC742bb28R82U
+wtuhzAlWuJwK7dHWVUJ8oAX8u4R7XAgJ1MAjFp7xqalqnyX\/4U6PoLbRucyS12ZpV5cZTWEVChU+
+e93r38BSK3HPaVh5lQ1eInPnc8IDHG6Bixbzjv8ruEil55zQcL3J9bqg2JTDWDAim2SqHVmL2KKt
+5PQ7dWosH3rPBV4HB4jdNgTTnIwAFWPy8734F4ZBZsLQTo4u1p6tlU2m\/dRiYrIBH+A3PGhRNhao
+ZQHa4VLLCj6DV1+n96uS8M4CPbef2ooabG2uZFvoEzRQzkiJH6eZSij\/DReQBOQqjirs9EVh7r9q
+9SY89IaRaOYqWnMCSMcSBFuG0aF+gX+nQGd88Ucx76AIfeawtJR0xwWX\/K2ieMfR9HzNR02Sn7XS
+Y2Z4SeyPlHgh6f+8tqGJ2P9ITa9Y6R9MEw2z1ypp9ycM+SHnGzw8Gcnpi0NkP7OX9cGQlHBZYxPF
+t40KN8PFvHMVLvy9g+T56lG9TAWXrfEfCBUiavMC6CHZ1q21ZASym\/itariWCyh5Pv9iRmitN9VD
+qsFlmexb7gQXYAgmTroW3pEHi5iMKBncIdwT6bP8gi2MbgLNAaG6oZW39Gc1WCuAkJVXTPR7KlXB
+6Qcx\/wSAuFyI4Pg6WVwP2RoLmVLE6ryLH0PtcoHZ+9Vnfpfwsxu7U+z0jDPC5b6pwaUxcJvg0lKB
+mr0mPcSsadKYT3SGi7I6bSU4qrbnb8GhcfBn0cxA0qNz1o1QvbdvnHxAUCE44Ee3TKRVYcl\/ktAz
+gbmAqGos+zvNEQqzA7RrN3cF1mm1OJnGp4re\/6RCXyBt2xMzXBqg02QgsOKGjY9w1ir9ABNwOQng
+mPVZi9dF+kNw6EcHX9Nqu5B+Go\/eTpcQ1DXqso8MaGYXcyUR0hvM04EXm3G8ntD0wuhYGmkP8yHj
+M9P7jiTBWn9rFr2kqvC8bLMN19\/1N+HyKua00djGrpEvOsFF7UXdfMQ8QpSBQ72vaXNTDSKJgNgq
+R6oqsbPmHgpoRTmFYmjEtLE6EOPDears8So\/VcckrQ661sdMqdapcIF80JN02xbAZ2q8axBRH7GV
+y7dsbQzcTidKngDkr2crkGtuoqW8f+\/hucSZnPNnK\/fdbn268TI1vViwOAinOu2F0bGhzHm17EtN
+aWViP8Tfd+JCVPgJN8yopL2fkNljGtO5FkXuu5pzVfKPT4KVvdioXfhZrQDy3w5Mnyi+nddGAtcG
+mPdJwsTz3cJF4RMePLg6FNrIh\/+kAu9Cme+rINArwYYJDaT3oqmRaHmjcdyiYYgdS3KsX1tXp1LZ
+mb2cduTAcfafiKI++dBFTTflVizyd532SAk6HeJKUVdrt2VY54aWVXPadeaHsotKYEF0s5pN2saD
+ubipyNJ+9SvIdgKbgrJ1dqzavRp0+oS5rZx\/2HB76uQC5opb57PMdy7zBxSVMmcLxzbVhX0ZkfFo
+VKYBYoj9M+7qV30UG9fC9CUoNuXkhzjer7aLoJIQHxO1Zji8XaOixs6oIknDUQMuMjttc+enclxk
+KH4JT\/WT4a8JhwOzVz+O7PIcr477FPhTD\/E5LP9GERMLhbMtWDEQEMNGw4URrSlFQKVC4wCjI3Jh
+nsDuQtEtTh2JGgN7SHyEO9dD9XSzr0h\/sMwiFX6yS\/xAOV7SC8sScpbwXyaxsw7MNgRKWkQ3R62B
+8gGtrDkiXDC1qZYTu7\/6jPxwGFycoP7Lvq8v724y3CDpVkOp+tFnpxC75gmXMGYz4xuGGqJUEVLX
+sOkNZ3wtE9DHenKWtHrTqunHBBcg4GAAvUsJ7CRlZ8XkefXF7FeATnUflSiUgJ6DWkxlH7c1Tmxx
+AZVCFH6N5eUO229GvateAy472eA8TC\/qg3BFWE+lnrLsalE03z9ox8dxcn6O6M+So2TpSoa7RyD9
+HTbfYcPjMXTthZ8PondtgMbF207sOcas6VMNnVQoNXfAjtAaF\/2iGrgngwXYQdwI0LN+xwkD1qVV
+hllm2Y2yAOoAdclG8+W512TfI7de2B0JLqKLtkbQhq8Wh8EF7+xDvamU2a\/whC3BfO9CIH5hAo+\/
+Ad0clnz\/wl+tCuTVMLmMp5YIyz4fc9nDv+vLHxku9dkZpDWKalQZY5+PIWD7Ctx+SvtxRde5O827
++MAN9DY+j2vf0KtL\/VXWabmtLnpOGVTkCoKYJyltP7m326Abp8oQ0vGpKqdqAiPd7F6Re\/\/v0pMj
+SA8uPTmC\/A8PmvLGahzRsAAAAABJRU5ErkJggg==",
+   "id": "20A270D0",
+   "type": 4,
+   "args": [
+    {
+     "paramValue": "4",
+     "paramType": "String",
+     "paramName": "Propertie.CursorPosition.Position"
+    },{
+     "paramValue": "TCursorPosition",
+     "paramType": "String",
+     "paramName": "Propertie.CursorPosition"
+    },{
+     "paramValue": "True",
+     "paramType": "String",
+     "paramName": "Propertie.bFocus"
+    },{
+     "paramValue": "1",
+     "paramType": "String",
+     "paramName": "Propertie.Target.WaitForReady"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Bottom"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.CursorPosition.OffsetY"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.SimulateClick"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.DelayAfterMs"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.KeyModifiers"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.ClickType"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Result"
+    },{
+     "paramValue": "TopLeft=0,TopRight=1,BottomLeft=2,BottomRight=3,Center=4",
+     "paramType": "String",
+     "paramName": "Propertie.CursorPosition.Position[Enum]"
+    },{
+     "paramValue": "单击 'A '",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Right"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.MouseButton"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Data"
+    },{
+     "paramValue": "7",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Level"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Target.TimeoutMS"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.AlterIfDisabled"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Desc"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.SimulateType"
+    },{
+     "paramValue": "'<html app=''chrome.exe'' title=''中国银行网站_金融市场_外汇牌价'' \/>
+<webctrl tag=''TABLE'' \/>
+<webctrl tag=''A'' tableRow=''1'' \/>
+'",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Selector"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.CursorPosition.OffsetX"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError"
+    },{
+     "paramValue": "TRect",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.SendWindowMessages"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.DelayBeforeMs"
+    },{
+     "paramValue": "",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Element"
+    },{
+     "paramValue": "TTarget",
+     "paramType": "String",
+     "paramName": "Propertie.Target"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Left"
+    },{
+     "paramValue": "0",
+     "paramType": "String",
+     "paramName": "Propertie.Target.Region.Top"
+    },{
+     "paramValue": "None=0,Interactive=1,Complete=2",
+     "paramType": "String",
+     "paramName": "Propertie.Target.WaitForReady[Enum]"
+    },{
+     "paramValue": "正常=0,离线=1,未知=2,提示=3,警告=4,次要=5,主要=6,严重=7",
+     "paramType": "String",
+     "paramName": "Common.ContinueOnError.Level[Enum]"
+    }],
+   "Text": "单击 'A '",
+   "Note": false
+  },{
+   "pid": "20448370",
+   "id": "20A27440",
+   "type": 0,
+   "args": [],
+   "Text": "此处可插入执行命令",
+   "Note": false
+  },{
+   "pid": "20448370",
+   "id": "20A27170",
+   "type": 6,
+   "args": [],
+   "Text": "否则",
+   "Note": false
+  },{
+   "pid": "20448370",
+   "funcname": "RPAProgrammingLogMessage",
+   "id": "20A25B90",
+   "type": 4,
+   "args": [
+    {
+     "paramValue": "日志消息",
+     "paramType": "String",
+     "paramName": "Common.DisplayName"
+    },{
+     "paramValue": "4",
+     "paramType": "String",
+     "paramName": "Propertie.Level"
+    },{
+     "paramValue": "打开浏览器失败",
+     "paramType": "String",
+     "paramName": "Propertie._Message"
+    }],
+   "Text": "日志消息",
+   "Note": false
+  },{
+   "pid": "20448370",
+   "id": "20A26A40",
+   "type": 0,
+   "args": [],
+   "Text": "此处可插入执行命令",
+   "Note": false
+  },{
+   "pid": "20447E70",
+   "id": "20A27A30",
+   "type": 0,
+   "args": [],
+   "Text": "此处可插入执行命令",
+   "Note": false
+  },{
+   "id": "20A27AD0",
+   "type": 0,
+   "args": [],
+   "Text": "此处可插入执行命令",
+   "Note": false
+  }],
+ "ExecuteLine": true,
+ "sWizardType": ""
+}

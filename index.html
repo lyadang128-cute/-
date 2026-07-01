@@ -909,6 +909,7 @@
         });
 
         // ── AI Chat ──
+        // 预设快捷问题（本地回答，无延迟）
         const answers = {
             '你最大的优势是什么？': '用 AI 重构开发效率。通过 Claude Code 工作流，我能将需求分析到代码交付的周期缩短 60% 以上。同时具备全栈视野——从 Java 后端到 Vue 前端，从数据库到 Docker 部署，一个人就是一支队伍。',
             '为什么不考研？': '我更看重工程实战。AI 行业半年就是一个代差，课堂里学一年的框架毕业时可能已过时。我希望在真实项目中快速成长，用代码产出证明能力。借助 AI 工具，自学效率和深度已远超传统课堂。',
@@ -922,6 +923,9 @@
         const chatMessages = document.getElementById('chat-messages');
         const chatInput = document.getElementById('chat-input');
         const chatSend = document.getElementById('chat-send');
+
+        // 对话历史（前端暂存，用于多轮对话）
+        let conversationHistory = [];
 
         const aiAvatarHTML = '<div class="chat-avatar ai-avatar"><img src="avatar.jpg" alt="小番茄" style="width:100%;height:100%;border-radius:50%;object-fit:cover"></div>';
         const userAvatarHTML = '<div class="chat-avatar user-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg></div>';
@@ -949,6 +953,7 @@
             return div;
         }
 
+        // 打字机效果（逐字显示，用于同步文本）
         function typewriter(container, text, callback) {
             const bubble = container.querySelector('.bubble');
             bubble.textContent = '';
@@ -969,16 +974,120 @@
             }, 35);
         }
 
-        function handleQuestion(question) {
-            addMessage('user', question, true);
-            const typingEl = showTyping();
-            const delay = 600 + Math.random() * 500;
-            setTimeout(() => {
-                typingEl.classList.remove('typing-indicator');
-                typewriter(typingEl, answers[question] || fallbackAnswer);
-            }, delay);
+        // 流式打字机（从 SSE chunk 逐字追加）
+        function streamTypewriter(bubble, container) {
+            let textBuffer = '';
+            const cursor = document.createElement('span');
+            cursor.className = 'typewriter-cursor';
+            bubble.appendChild(cursor);
+            let i = 0;
+            let timer = null;
+
+            function flush() {
+                if (timer) return;
+                timer = setInterval(() => {
+                    if (i < textBuffer.length) {
+                        const ch = textBuffer[i];
+                        bubble.insertBefore(document.createTextNode(ch), cursor);
+                        i++;
+                        container.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    } else {
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                }, 20);
+            }
+
+            return {
+                append(chunk) {
+                    // 解析 DeepSeek SSE: "data: {...}\\n\\n"
+                    const lines = (textBuffer + chunk).split('\n');
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            const raw = line.slice(6).trim();
+                            if (raw === '[DONE]') continue;
+                            try {
+                                const json = JSON.parse(raw);
+                                const content = json.choices?.[0]?.delta?.content;
+                                if (content) {
+                                    textBuffer += content;
+                                    flush();
+                                }
+                            } catch (e) { /* skip broken chunks */ }
+                        }
+                    }
+                },
+                done() {
+                    // 清空剩余缓冲
+                    const checkDone = setInterval(() => {
+                        if (!timer && i >= textBuffer.length) {
+                            cursor.remove();
+                            clearInterval(checkDone);
+                        }
+                    }, 50);
+                }
+            };
         }
 
+        // 真正的 AI 回答：调用 Netlify Function → DeepSeek API（流式）
+        async function askAI(question) {
+            conversationHistory.push({ role: 'user', content: question });
+            const typingEl = showTyping();
+            const bubble = typingEl.querySelector('.bubble');
+            const stream = streamTypewriter(bubble, typingEl);
+
+            try {
+                const response = await fetch('/api/ai-chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversationHistory }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('API error: ' + response.status);
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let fullText = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    const chunk = decoder.decode(value, { stream: true });
+                    stream.append(chunk);
+                    // accumulate full text from visible bubble
+                    fullText = bubble.textContent || '';
+                }
+
+                typingEl.classList.remove('typing-indicator');
+                stream.done();
+                conversationHistory.push({ role: 'assistant', content: fullText || bubble.textContent });
+            } catch (error) {
+                console.error('AI Chat error:', error);
+                typingEl.classList.remove('typing-indicator');
+                // fallback to local answer
+                typingEl.querySelector('.bubble').textContent = fallbackAnswer;
+            }
+        }
+
+        function handleQuestion(question) {
+            addMessage('user', question, true);
+
+            // 预设问题走本地回答（快）
+            if (answers[question]) {
+                const typingEl = showTyping();
+                const delay = 600 + Math.random() * 500;
+                setTimeout(() => {
+                    typingEl.classList.remove('typing-indicator');
+                    typewriter(typingEl, answers[question]);
+                }, delay);
+                return;
+            }
+
+            // 自由输入走真实 AI API
+            askAI(question);
+        }
         // Preset chips
         document.querySelectorAll('.preset-chip').forEach(chip => {
             chip.addEventListener('click', function() {

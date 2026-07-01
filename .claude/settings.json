@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(npm list *)",
+      "Bash(node gen_doc.js)",
+      "Bash(npm init *)",
+      "Bash(npm install *)"
     ]
   }
 }

@@ -1,0 +1,56 @@
+% --- 简历原材料库 (For Claude Code Reading) ---
+% 目标岗位：AI 应用工程师 / 全栈开发工程师 (AI 提效方向)
+% 核心逻辑：突出“人机协作”与“快速交付”，淡化传统学术成绩
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section{基本信息 / Basic Info}
+\begin{itemize}
+    \item 姓名：[你的名字] 
+    \item 专业：电子信息科学与技术 (本科 - 公办)
+    \item 核心特质：Digital Creator (造物者), AI Native Developer
+    \item 技术博客/作品集：https://lyadang128-cute.github.io/-/ 
+    \item 当前工具链：Claude Code, Cursor, GitHub, Vercel, Terminal-based Workflow
+\end{itemize}
+
+\section{职业愿景 / Career Objective}
+拒绝传统嵌入式开发的缓慢反馈，致力于在 AI 时代利用大语言模型 (LLM) 工具实现极速工程交付。目标成为一名能够将 AI 能力无缝集成到业务场景中的“AI 应用工程师”。
+
+\section{核心技术栈 / Technical Toolbox}
+\begin{itemize}
+    \item \textbf{AI 驱动开发 (核心):} 精通 Claude Code 命令行流、Prompt Engineering。能够利用 AI 进行架构设计、代码审计、Bug 自动修复及文档生成。
+    \item \textbf{全栈开发基础:} 
+        \begin{itemize}
+            \item 后端：Java, Spring Boot, 熟悉 eladmin 开源架构。
+            \item 前端：Vue.js, HTML5, CSS3, Tailwind CSS (用于快速构建现代 UI)。
+            \item 数据库：MySQL, Redis 基础配置与调优。
+        \end{itemize}
+    \item \textbf{软件质量与测试:} 具备自动化测试思维，能利用 AI 生成测试用例，熟悉软件测试全流程文档编写。
+\end{itemize}
+
+\section{重点项目经历 / Key Projects}
+
+\subsection{项目一：AI 协同驱动的全栈管理系统 (基于 eladmin)}
+\textbf{项目描述：} 针对传统管理后台开发周期长的问题，利用 Claude Code 作为“核心开发者”，在极短时间内完成企业级脚手架 eladmin 的部署与二次开发。
+\textbf{关键行动：}
+\begin{itemize}
+    \item \textbf{极速部署：} 绕过传统手动配置坑点，通过 AI 指令快速完成前后端环境搭建、数据库迁移及依赖管理。
+    \item \textbf{功能造物：} 独立增加 [你加的功能，如：AI 自动报表/测试文档管理] 模块。
+    \item \textbf{提效成果：} 将原本需要数周的系统熟悉与环境配置缩短至小时级，验证了“人机协作”在复杂全栈项目中的优越性。
+\end{itemize}
+
+\subsection{项目二：个人品牌与作品集矩阵 (GitHub Pages)}
+\textbf{项目描述：} 建立基于 GitHub Pages 的个人技术展示窗口，作为“造物主”身份的对外接口。
+\textbf{关键行动：}
+\begin{itemize}
+    \item 利用 AI 辅助进行 UI 设计与响应式布局重构。
+    \item 整合 GitHub 工作流，实现代码提交即部署。
+\end{itemize}
+
+\section{自我评价 / Self-Reflection}
+虽然在传统学科考试中表现平平，但在实战工程、新工具探索和解决实际问题（Problem Solving）方面具备极高热情。不考研，全心投入 AI 工业革命浪潮，追求代码的“优雅交付”与“价值创造”。
+
+\end{document}

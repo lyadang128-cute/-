@@ -1,7 +1,33 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init *)"
+      "Bash(git init *)",
+      "Bash(python -c \"import weasyprint; print\\('weasyprint ok'\\)\")",
+      "Bash(python -c \"import reportlab; print\\('reportlab ok'\\)\")",
+      "Bash(python -c \"from fpdf import FPDF; print\\('fpdf2 ok'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python generate_resume.py)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
+      "Read(//c/Program Files/Microsoft/Edge/Application/**)",
+      "Bash(/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe *)",
+      "Bash(python -c ' *)",
+      "Bash(python *)",
+      "Bash(where wkhtmltopdf *)",
+      "Bash(cmd /c \"dir C:\\\\Windows\\\\Fonts\\\\msyh* C:\\\\Windows\\\\Fonts\\\\simhei* C:\\\\Windows\\\\Fonts\\\\simsun* 2>nul\")",
+      "Bash(cmd /c \"start msedge --headless --print-to-pdf=F:/AI/web 1.0/test.pdf --no-pdf-header-footer F:/AI/web 1.0/resume.html\")",
+      "Bash(\"C:/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge\" --headless --print-to-pdf=\"F:/AI/web 1.0/小番茄_AI应用工程师_简历.pdf\" --no-pdf-header-footer \"file:///F:/AI/web%201.0/resume.html\")",
+      "Bash(ls -la \"F:/AI/RAG demo/\")",
+      "Read(//f/AI/RAG demo/**)",
+      "Bash(find \"F:/AI/RAG demo/\" -maxdepth 3 -type f | head -100)",
+      "Bash(git reset *)",
+      "Bash(git commit *)",
+      "WebFetch(domain:lyadang128-cute.github.io)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://lyadang128-cute.github.io/-/\")",
+      "Bash(npx netlify *)",
+      "Bash(netlify status *)",
+      "WebSearch",
+      "WebFetch(domain:www.liepin.com)",
+      "WebFetch(domain:www.innohere.com)"
     ]
   }
 }

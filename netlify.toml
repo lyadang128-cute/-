@@ -1,6 +1,13 @@
 [build]
   publish = "."
 
+# 把 /api/ai-chat 请求转发给 serverless function
+[[redirects]]
+  from = "/api/ai-chat"
+  to = "/.netlify/functions/ai-chat"
+  status = 200
+
+# SPA fallback — 放在最后
 [[redirects]]
   from = "/*"
   to = "/index.html"
