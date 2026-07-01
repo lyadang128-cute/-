@@ -697,7 +697,7 @@
                 <!-- Project 3 -->
                 <div class="grid md:grid-cols-[280px_1fr] gap-10 items-start project-card reveal">
                     <div>
-                        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2026.05 — 2026.06</p>
+                        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400 mb-3">2026.05 — 2026.07</p>
                         <h3 class="text-2xl font-light text-gray-900 mb-2">RAG 知识库系统 · 企业级文档检索与智能问答</h3>
                         <p class="text-sm text-gray-400">全栈项目 · RAG · 开源</p>
                     </div>
@@ -705,9 +705,9 @@
                         <p class="text-gray-500 leading-relaxed mb-5">
                             从零构建完整的 <strong class="text-gray-900 font-medium">RAG 检索增强生成</strong> 知识库系统。支持 PDF / Word / Excel / PPT / TXT / 网页等多格式文档解析入库，
                             集成 <strong class="text-gray-900 font-medium">PaddleOCR</strong> 图片文字识别。
-                            检索端实现 Dense（bge-small-zh-v1.5 512D）+ Sparse（BM25）<strong class="text-gray-900 font-medium">混合检索</strong> + RRF 融合 + bge-reranker-v2-m3 交叉精排，
-                            对话端基于 FastAPI + SSE <strong class="text-gray-900 font-medium">流式输出</strong>，支持多知识库切换、QA Memory 记忆系统。
-                            前端 Vue 3 + Vite，Docker Compose 一键部署，内置 RAGAS 评测工具。AI 驱动全流程开发，开源发布至 GitHub。
+                            检索端实现 Dense（bge-large-zh-v1.5 1024D）+ Sparse（BM25）<strong class="text-gray-900 font-medium">混合检索</strong> + RRF 融合 + bge-reranker-v2-m3 交叉精排，
+                            内置 <strong class="text-gray-900 font-medium">RAGAS 评测工具</strong>，支持量化调参验证。设计 <strong class="text-gray-900 font-medium">分部门多知识库权限体系</strong>（公开/部门/管理员三级），JWT 用户认证，
+                            不同角色用户检索范围自动隔离。压力测试 <strong class="text-gray-900 font-medium">50 并发零错误</strong>，Docker Compose 一键部署，AI 驱动全流程开发，开源发布至 GitHub。
                         </p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 text-xs font-medium text-gray-400 bg-white rounded-full border border-gray-100">FastAPI</span>

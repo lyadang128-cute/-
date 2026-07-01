@@ -253,14 +253,14 @@
       <span class="proj-name">RAG 知识库系统 · 企业级文档检索与智能问答</span>
       <span class="proj-date">2026.05 — 2026.06</span>
     </div>
-    <div class="proj-stack">FastAPI · Vue 3 · Qdrant · Docker · LangChain · DeepSeek API · Sentence-Transformers</div>
+    <div class="proj-stack">FastAPI · Vue 3 · Qdrant · JWT · bge-large · DeepSeek API · Docker · SQLite</div>
     <div class="proj-desc">
       <ul>
         <li>从零构建完整的 RAG 检索增强生成知识库系统，支持 PDF / Word / Excel / PPT / TXT / 网页等多格式文档智能解析与入库，集成 PaddleOCR 图片文字识别</li>
-        <li>实现混合检索架构：Dense（bge-small-zh-v1.5 512D）+ Sparse（BM25）双路召回 + RRF 融合 + bge-reranker-v2-m3 交叉精排，显著提升检索命中率</li>
+        <li>实现混合检索架构：Dense（bge-large-zh-v1.5 1024D）+ Sparse（BM25）双路召回 + RRF 融合 + bge-reranker-v2-m3 交叉精排，内置 RAGAS 评测工具，可量化调参验证</li>
+        <li>设计分部门多知识库权限体系（公开/部门/管理员三级），JWT 用户认证，不同角色用户检索范围自动隔离</li>
         <li>基于 FastAPI + SSE 实现流式 AI 对话，支持多知识库切换、QA Memory 记忆系统、快速直搜模式</li>
-        <li>Vue 3 + Vite 前端，Docker Compose 一键部署（Qdrant + 后端 + 前端），内置 RAGAS 评测工具，支持调参验证</li>
-        <li>AI 驱动全流程开发，从架构设计到代码实现均由 Claude Code 辅助完成，开源发布至 GitHub</li>
+        <li>压力测试 50 并发零错误，Vue 3 + Vite 前端，Docker Compose 一键部署，AI 驱动全流程开发，开源发布至 GitHub</li>
       </ul>
     </div>
   </div>
