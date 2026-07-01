@@ -121,9 +121,9 @@
   <div class="contact-row">
     <span>邮箱：3022459473@qq.com</span>
     <span>电话：191-8640-6889</span>
-    <span>意向：深圳</span>
+    <span>意向：杭州</span>
     <span><a href="https://github.com/lyadang128-cute">GitHub</a></span>
-    <span>微信：xiaofanqie_ai</span>
+    <span>微信：yy3022459473</span>
   </div>
 </div>
 
@@ -203,15 +203,15 @@
 
   <div class="project avoid-break">
     <div class="proj-header clearfix">
-      <span class="proj-name">EL-Admin 后台管理系统二次开发</span>
-      <span class="proj-date">2025.12 — 2026.02</span>
+      <span class="proj-name">RPA 外汇牌价数据采集与入库</span>
+      <span class="proj-date">2025.12 — 2026.01</span>
     </div>
-    <div class="proj-stack">Claude Code · Java · Spring Boot · eladmin · Vue.js · MySQL · Nginx</div>
+    <div class="proj-stack">UiBot · RPA · MySQL · Excel · 浏览器自动化</div>
     <div class="proj-desc">
       <ul>
-        <li>基于 EL-Admin（Spring Boot + Vue.js）前后端分离框架进行企业级后台管理系统定制开发</li>
-        <li>独立完成环境搭建、数据库设计、业务模块开发与服务器部署全流程，新增数据可视化看板与批量操作功能</li>
-        <li>通过 AI 指令快速完成前后端环境搭建及依赖管理，将数周的系统熟悉周期压缩至小时级，验证了「人机协作」在全栈项目中的效率优势</li>
+        <li>独立完成 RPA 高级工程师认证考核项目，基于 UiBot 平台实现中国银行外汇牌价自动化采集</li>
+        <li>实现浏览器自动化操作：页面打开 → 元素定位判断 → 日期范围动态计算（按周回溯）→ 条件筛选查询 → 数据提取与校验</li>
+        <li>查询结果自动写入 Excel 文件并同步至 MySQL 数据库，全程日志记录与异常处理</li>
       </ul>
     </div>
   </div>
@@ -229,21 +229,6 @@
         <li>基于 DeepSeek API（OpenAI 兼容协议），实现 Function Calling 多步推理链</li>
         <li>自建会话量化日志系统，追踪每轮 token 消耗、工具调用频次与任务耗时</li>
         <li>实战场景：AI 资讯整理助手 — 搜索中英文最新资讯 → 抓取详情 → 生成格式化 Word 报告</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="project avoid-break">
-    <div class="proj-header clearfix">
-      <span class="proj-name">AI 智能助手应用（RAG + Agent）</span>
-      <span class="proj-date">2025.09 — 2025.12</span>
-    </div>
-    <div class="proj-stack">LangChain · FastAPI · Chroma · Docker · Streamlit</div>
-    <div class="proj-desc">
-      <ul>
-        <li>基于 LangChain + FastAPI 搭建 RAG 检索增强生成系统，实现文档语义检索与智能问答</li>
-        <li>集成多轮对话记忆与流式输出，利用 Chroma 向量数据库存储和检索文档 Embedding</li>
-        <li>使用 Docker 完成服务容器化，实现一键部署与环境一致性</li>
       </ul>
     </div>
   </div>
@@ -272,7 +257,7 @@
     <div class="proj-desc">
       <ul>
         <li>从零构建完整的 RAG 检索增强生成知识库系统，支持 PDF / Word / Excel / PPT / TXT / 网页等多格式文档智能解析与入库，集成 PaddleOCR 图片文字识别</li>
-        <li>实现混合检索架构：Dense（BGE-large 1024D）+ Sparse（BM25）双路召回 + RRF 融合 + bge-reranker-v2-m3 交叉精排，显著提升检索命中率</li>
+        <li>实现混合检索架构：Dense（bge-small-zh-v1.5 512D）+ Sparse（BM25）双路召回 + RRF 融合 + bge-reranker-v2-m3 交叉精排，显著提升检索命中率</li>
         <li>基于 FastAPI + SSE 实现流式 AI 对话，支持多知识库切换、QA Memory 记忆系统、快速直搜模式</li>
         <li>Vue 3 + Vite 前端，Docker Compose 一键部署（Qdrant + 后端 + 前端），内置 RAGAS 评测工具，支持调参验证</li>
         <li>AI 驱动全流程开发，从架构设计到代码实现均由 Claude Code 辅助完成，开源发布至 GitHub</li>
